@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.MenuPrincipalController">
+   
+   <Pane layoutX="13.0" layoutY="13.0" prefHeight="374.0" prefWidth="484.0">
+      <ImageView fitHeight="306.0" fitWidth="189.0" layoutX="42.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="botonRecetas" layoutX="306.0" layoutY="102.0" mnemonicParsing="false" onAction="#abrirRecetas" prefHeight="35.0" prefWidth="104.0" text="Recetas">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="botonPedidos" layoutX="306.0" layoutY="167.0" mnemonicParsing="false" onAction="#abrirPedidos" prefHeight="40.0" prefWidth="104.0" text="Pedidos">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="botonCuenta" layoutX="306.0" layoutY="239.0" mnemonicParsing="false" onAction="#abrirCuenta" prefHeight="40.0" prefWidth="104.0" text="Cuenta">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </Pane>
+</AnchorPane>
