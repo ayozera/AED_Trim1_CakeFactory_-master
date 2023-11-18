@@ -7,16 +7,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Pedidos {
-
-    private static Stage stagePedidos = new Stage();
+public class LogIn {
+    private static Stage stageLogIn = new Stage();
     public static void show() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("Pedidos.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("LogIn.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stagePedidos.setTitle("Cake Factory");
-        stagePedidos.setScene(scene);
-        stagePedidos.show();
-
-
+        stageLogIn.setTitle("Cake Factory");
+        stageLogIn.setScene(scene);
+        stageLogIn.show();
     }
 }

@@ -11,10 +11,10 @@ import java.util.List;
 public class Pedido {
 
     private Cliente cliente;
-    private List<Receta> tarta = new ArrayList<>();
+    private Receta tarta;
     private LocalDate fecha;
 
-    public Pedido(Cliente cliente, ArrayList<Receta> tarta, LocalDate fecha) {
+    public Pedido(Cliente cliente, Receta tarta, LocalDate fecha) {
         this.cliente = cliente;
         this.tarta = tarta;
         this.fecha = fecha;
@@ -28,13 +28,6 @@ public class Pedido {
         this.cliente = cliente;
     }
 
-    public List<Receta> getTarta() {
-        return tarta;
-    }
-
-    public void setTarta(List<Receta> tarta) {
-        this.tarta = tarta;
-    }
 
     public LocalDate getFecha() {
         return fecha;
