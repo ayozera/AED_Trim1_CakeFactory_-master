@@ -14,7 +14,6 @@ public class AppMain extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         abrirVentana("LogIn.fxml", "Cake Factory");
-
     }
 
     public static void main(String[] args) throws IOException {
