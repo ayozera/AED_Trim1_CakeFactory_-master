@@ -7,10 +7,7 @@ import com.example.aed_trim1_cakefactory_.views.MenuPrincipal;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-
 import java.io.IOException;
-
-import static com.example.aed_trim1_cakefactory_.modelo.Navegacion.abrirVentana;
 
 public class LogInController {
 

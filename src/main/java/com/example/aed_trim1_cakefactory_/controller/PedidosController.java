@@ -5,7 +5,6 @@ import com.example.aed_trim1_cakefactory_.views.NuevoPedido;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
-
 import java.io.IOException;
 
 public class PedidosController {

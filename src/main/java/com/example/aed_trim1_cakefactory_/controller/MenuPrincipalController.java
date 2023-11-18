@@ -4,10 +4,8 @@ import com.example.aed_trim1_cakefactory_.views.Pedidos;
 import com.example.aed_trim1_cakefactory_.views.Recetas;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
-
 import java.io.IOException;
 
-import static com.example.aed_trim1_cakefactory_.modelo.Navegacion.abrirVentana;
 public class MenuPrincipalController {
     public Button botonRecetas;
     public Button botonPedidos;

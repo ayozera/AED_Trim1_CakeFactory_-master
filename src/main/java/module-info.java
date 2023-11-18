@@ -1,6 +1,7 @@
 module com.example.aed_trim1_cakefactory_ {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens com.example.aed_trim1_cakefactory_ to javafx.fxml;
