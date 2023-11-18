@@ -8,30 +8,32 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.aed_trim1_cakefactory_.controller.PedidosController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.PedidosController">
     <Pane layoutX="8.0" layoutY="7.0" prefHeight="386.0" prefWidth="583.0">
         <TableView fx:id="tablaPedidos" layoutX="21.0" layoutY="68.0" prefHeight="307.0" prefWidth="546.0">
             <columns>
-                <TableColumn prefWidth="75.0" text="C1"/>
-                <TableColumn prefWidth="75.0" text="C2"/>
+            <TableColumn fx:id="indice" prefWidth="75.0" text="C1" />
+                <TableColumn fx:id="nombreCliente" prefWidth="75.0" text="C1" />
+                <TableColumn fx:id="nombreReceta" prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="fecha" prefWidth="75.0" text="C1" />
+            <TableColumn fx:id="direccion" prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="email" prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="telefono" prefWidth="75.0" text="C2" />
             </columns>
         </TableView>
         <Label layoutX="45.0" layoutY="28.0" text="Pedidos">
             <font>
-                <Font name="Calibri" size="18.0"/>
+                <Font name="Calibri" size="18.0" />
             </font>
         </Label>
-        <Button fx:id="botonCrear" layoutX="347.0" layoutY="15.0" mnemonicParsing="false"
-                onAction="#abrirNuevoPedido" text="Nuevo">
+        <Button fx:id="botonCrear" layoutX="347.0" layoutY="15.0" mnemonicParsing="false" onAction="#abrirNuevoPedido" text="Nuevo">
             <font>
-                <Font name="Calibri" size="18.0"/>
+                <Font name="Calibri" size="18.0" />
             </font>
         </Button>
-        <Button fx:id="botonEditar" layoutX="481.0" layoutY="15.0" mnemonicParsing="false"
-                onAction="#abrirEditarPedido" text="Editar">
+        <Button fx:id="botonEditar" layoutX="481.0" layoutY="15.0" mnemonicParsing="false" onAction="#abrirEditarPedido" text="Editar">
             <font>
-                <Font name="Calibri" size="18.0"/>
+                <Font name="Calibri" size="18.0" />
             </font>
         </Button>
     </Pane>
