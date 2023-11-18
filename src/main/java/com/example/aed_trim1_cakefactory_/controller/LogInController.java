@@ -9,6 +9,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import java.io.IOException;
 
+import static com.example.aed_trim1_cakefactory_.modelo.ConexionDB.establecerConexionPredeterminada;
+
 public class LogInController {
 
     public TextField textfieldUsuario;
@@ -22,10 +24,15 @@ public class LogInController {
                 throw new CampoVacioException();
             }
             Usuario usuario = new Usuario(nombre, clave);
-            System.out.println("Nombre: " + usuario.getNombre());
-            System.out.println("Clave: " + usuario.getPassword_db());
-            System.out.println("Administrador: " + usuario.isAdmin());
 
+            try {
+                if(establecerConexionPredeterminada(usuario.getNombre(), usuario.getPassword_db())) {
+                    System.out.println("Exito al establecer conexión con la DB");
+                } else {
+                    System.out.println("Fallo al conectar con la DB");
+                }
+            } catch (Exception e) {
+            }
             MenuPrincipal.show();
 
         } catch (UsuarioNoValidoException e) {

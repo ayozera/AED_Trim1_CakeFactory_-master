@@ -1,48 +1,33 @@
 package com.example.aed_trim1_cakefactory_.modelo;
 
-import java.sql.*;
+import com.example.aed_trim1_cakefactory_.modelo.excepciones.ConexionFallidaException;
+
+import java.sql.SQLException;
+
 public class ConexionDB {
 
-//"encrypt=true;loginTimeout=90;integratedSecurity=true;" Para mejorar la seguridad y activar un cierre automático de sesión
-//"?autoReconnect=true&useSSL=false" Para probar más rápido los tests de conexión
-private String urlDriver = "jdbc:mysql://192.168.221.136:3306";
-private String usuario = "root";
-private String password = "";
-private Connection conexion;
-
-public ConexionDB() throws SQLException {
-        conexion = DriverManager.getConnection(urlDriver, usuario, password);
-        }
-
-public ConexionDB(String urlDriver, String usuario, String password) throws SQLException {
-        this.urlDriver = urlDriver;
-        this.usuario = usuario;
-        this.password = password;
-        conexion = DriverManager.getConnection(urlDriver, usuario, password);
-        }
-
-public boolean comprobarConexion() {
+    private static Conector conector;
+    public static boolean establecerConexionPredeterminada(String nombre, String clave) {
         try {
-        Connection con = DriverManager.getConnection(urlDriver, usuario, password);
-        if (con != null) {
-        System.out.println("[i] Exito al conectar con el servidor");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conector = new Conector(nombre, clave);
+            if (!conector.comprobarConexion()) {
+                throw new ConexionFallidaException("No se ha podido establecer conexión");
+            }
+            return true;
+        } catch (ConexionFallidaException ex) {
+            System.out.println("[!] Atención. " + ex.getMessage());
+            return false;
+        } catch (SQLException e) {
+            System.out.println("[!] Atención. Ha ocurrido un error con la base de datos. Por favor, intentelo de nuevo.");
+            return false;
+        } catch (ClassNotFoundException e) {
+            System.out.println("clase no encontrada");
+            return false;
+        }
+    }
 
-        }
-        return true;
-        } catch (SQLException ex) {
-        return false;
-        }
-        }
-
-public String getUrlDriver() {
-        return urlDriver;
-        }
-
-public String getUsuario() {
-        return usuario;
-        }
-
-public Connection getConexion() {
-        return conexion;
-}
+    public static Conector getConector() {
+        return conector;
+    }
 }
