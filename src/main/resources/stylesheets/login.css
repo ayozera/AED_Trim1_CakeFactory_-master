@@ -5,3 +5,10 @@
 #signin{
    
 }
+
+#fondoPrincipal{
+-fx-background-image: url('../images/tartaFondo.jpg');
+-fx-background-repeat: no-repeat;
+-fx-background-position: center center;
+-fx-opacity:0.5;
+}

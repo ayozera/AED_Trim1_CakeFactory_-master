@@ -8,29 +8,35 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="262.0" prefWidth="390.0" stylesheets="@../../../stylesheets/login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.LogInController">
-   <Pane layoutX="14.0" layoutY="14.0" prefHeight="234.0" prefWidth="360.0">
-      <Label layoutX="83.0" layoutY="14.0" text="Bienvenido a Cake Factory">
-         <font>
-            <Font name="Calibri" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="55.0" layoutY="64.0" text="Usuario">
-         <font>
-            <Font name="Calibri" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="textfieldUsuario" layoutX="169.0" layoutY="62.0" />
-      <Label layoutX="51.0" layoutY="117.0" text="Contraseña">
-         <font>
-            <Font name="Calibri" size="18.0" />
-         </font>
-      </Label>
-      <PasswordField fx:id="textfieldClave" layoutX="169.0" layoutY="116.0" />
-      <Button id="signin" layoutX="143.0" layoutY="177.0" mnemonicParsing="false" onAction="#signIn" text="Sign in">
-         <font>
-            <Font name="Calibri" size="18.0" />
-         </font>
-      </Button>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.LogInController">
+   <Pane layoutX="32.0" layoutY="15.0" prefHeight="457.0" prefWidth="534.0">
+      <children>
+         <Pane id="fondoPrincipal" layoutX="-32.0" layoutY="-15.0" prefHeight="488.0" prefWidth="599.0" stylesheets="@../../../stylesheets/login.css">
+            <children>
+               <Label layoutX="120.0" layoutY="304.0" text="Contraseña">
+                  <font>
+                     <Font name="Calibri" size="18.0" />
+                  </font>
+               </Label>
+               <Button id="signin" layoutX="432.0" layoutY="363.0" mnemonicParsing="false" onAction="#signIn" text="Sign in">
+                  <font>
+                     <Font name="Calibri" size="18.0" />
+                  </font>
+               </Button>
+               <TextField fx:id="textfieldUsuario" layoutX="358.0" layoutY="211.0" />
+               <PasswordField fx:id="textfieldClave" layoutX="358.0" layoutY="302.0" />
+               <Label layoutX="113.0" layoutY="214.0" text="Usuario">
+                  <font>
+                     <Font name="Calibri" size="18.0" />
+                  </font>
+               </Label>
+               <Label layoutX="134.0" layoutY="55.0" prefHeight="82.0" prefWidth="331.0" text="Bienvenido a Cake Factory" textFill="#151515">
+                  <font>
+                     <Font name="Calibri Bold" size="26.0" />
+                  </font>
+               </Label>
+            </children>
+         </Pane>
+      </children>
    </Pane>
 </AnchorPane>
