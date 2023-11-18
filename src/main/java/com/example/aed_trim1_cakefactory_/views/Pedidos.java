@@ -16,5 +16,7 @@ public class Pedidos {
         stagePedidos.setTitle("Cake Factory");
         stagePedidos.setScene(scene);
         stagePedidos.show();
+
+
     }
 }

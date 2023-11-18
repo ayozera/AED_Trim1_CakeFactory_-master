@@ -9,24 +9,27 @@ import java.util.ArrayList;
  * @author Ayoze Rodríguez Álvarez
  */
 public class Consulta {
-    public static void consultar(String nombreTabla, Connection conexion) {
+    public static ResultSet consultarPedido(Connection conexion) {
         try {
-            String[] nombreCampos = obtenerCampos(nombreTabla, conexion);
-            String listaCampos = listarCampos(nombreCampos);
-
-            String sentencia = String.format("SELECT %s FROM %s", listaCampos, nombreTabla);
+            String sentencia = "select c.nombre, r.nombre, p.fecha, c.direccion, c.email, c.telefono " +
+                    "from clientes as c " +
+                    "inner join pedido as p " +
+                    "ON c.id=p.cliente_id " +
+                    "inner join receta as r " +
+                    "ON p.tarta_id=r.id " +
+                    "order by p.fecha;";
 
             Statement estamento = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-            ResultSet resultado = estamento.executeQuery(sentencia);
-
+            return estamento.executeQuery(sentencia);
 
         } catch (SQLException e) {
             System.out.println("[!] El servidor no ha admitido los parámetros de la consulta");
             e.printStackTrace();
         }
+        return null;
     }
 
-    public static String[] obtenerCampos(String nombreTabla, Connection conexion) throws SQLException {
+    public static ArrayList<String> obtenerCampos(String nombreTabla, Connection conexion) throws SQLException {
         DatabaseMetaData meta = conexion.getMetaData();
         ResultSet resultado = meta.getColumns(null, null, nombreTabla, null);
 
@@ -35,22 +38,20 @@ public class Consulta {
             nombreCampos.add(resultado.getString("COLUMN_NAME"));
         }
 
-        String[] salida = new String[nombreCampos.size()];
-        for (int i = 0; i < salida.length; i++) {
-            salida[i] = nombreCampos.get(i);
-        }
-        return salida;
+        return nombreCampos;
     }
 
-    public static String listarCampos(String[] nombreCampos) {
+    public static String listarCampos(ArrayList<String> nombreCampos) {
         String listaCampos = "";
-        for (int i = 0; i < nombreCampos.length - 1; i++) {
-            listaCampos += nombreCampos[i] + ", ";
+        for (int i = 0; i < nombreCampos.size() - 1; i++) {
+            if (!nombreCampos.get(i).equalsIgnoreCase("id") ) {
+                listaCampos += nombreCampos.get(i) + ", ";
+            }
         }
-        listaCampos += nombreCampos[nombreCampos.length - 1];
+        listaCampos += nombreCampos.get(nombreCampos.size() - 1);
         return listaCampos;
     }
-    
+
 
 }
 
