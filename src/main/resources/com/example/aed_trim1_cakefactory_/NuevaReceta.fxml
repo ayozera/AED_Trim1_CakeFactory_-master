@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -9,16 +11,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.collections.FXCollections?>
-<?import java.lang.String?>
-<AnchorPane prefHeight="439.0" prefWidth="600.0" style="-fx-border-color: #ba5c12ff; -fx-background-color: rgb(235, 230, 211); -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.NuevaRecetaController">
+<AnchorPane prefHeight="439.0" prefWidth="683.0" style="-fx-border-color: #ba5c12ff; -fx-background-color: rgb(235, 230, 211); -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.NuevaRecetaController">
    <Label layoutX="399.0" layoutY="11.0" text="Procedimiento y Elaboración">
       <font>
          <Font name="Calibri" size="18.0" />
       </font>
    </Label>
-   <TextArea fx:id="textAreaElaboracion" layoutX="343.0" layoutY="37.0" prefHeight="265.0" prefWidth="322.0" style="-fx-background-color: #5bc0beff;" />
-   <Button fx:id="botonCrear" layoutX="451.0" layoutY="330.0" mnemonicParsing="false" onAction="#crear" prefHeight="40.0" prefWidth="106.0" style="-fx-background-color: #031d44ff;" text="Crear" textFill="WHITE" underline="true">
+   <TextArea fx:id="textAreaElaboracion" layoutX="342.0" layoutY="46.0" prefHeight="265.0" prefWidth="322.0" style="-fx-background-color: #5bc0beff;" />
+   <Button fx:id="botonCrear" layoutX="516.0" layoutY="343.0" mnemonicParsing="false" onAction="#crear" prefHeight="40.0" prefWidth="106.0" style="-fx-background-color: #031d44ff;" text="Crear" textFill="WHITE" underline="true">
       <font>
          <Font name="Calibri" size="18.0" />
       </font>
@@ -26,13 +26,13 @@
          <MotionBlur radius="1.11" />
       </effect>
    </Button>
-   <ListView fx:id="textAreaIngredientes" layoutX="55.0" layoutY="81.0" prefHeight="308.0" prefWidth="253.0" />
+   <ListView fx:id="textAreaIngredientes" layoutX="58.0" layoutY="46.0" prefHeight="266.0" prefWidth="254.0" />
    <Label layoutX="127.0" layoutY="11.0" text="Lista Ingredientes">
       <font>
          <Font name="Calibri" size="18.0" />
       </font>
    </Label>
-   <ComboBox fx:id="comboBoxIngredientes" layoutX="52.0" layoutY="404.0" prefHeight="25.0" prefWidth="186.0" promptText="Escoge los ingredientes">
+   <ComboBox fx:id="comboBoxIngredientes" layoutX="58.0" layoutY="330.0" prefHeight="25.0" prefWidth="186.0" promptText="Escoge los ingredientes">
       <items>
          <FXCollections fx:factory="observableArrayList">
             <String fx:value="Harina" />

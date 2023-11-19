@@ -8,30 +8,28 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.aed_trim1_cakefactory_.controller.RecetasController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.RecetasController">
     <Pane layoutX="8.0" layoutY="7.0" prefHeight="386.0" prefWidth="583.0">
         <TableView fx:id="tablaRecetas" layoutX="21.0" layoutY="68.0" prefHeight="307.0" prefWidth="546.0">
             <columns>
-                <TableColumn prefWidth="75.0" text="C1"/>
-                <TableColumn prefWidth="75.0" text="C2"/>
+                <TableColumn fx:id="indice" prefWidth="75.0" />
+                <TableColumn fx:id="nombreReceta" prefWidth="75.0" text="Receta" />
+            <TableColumn fx:id="precio" prefWidth="75.0" text="Precio" />
             </columns>
         </TableView>
         <Label layoutX="65.0" layoutY="27.0" text="Recetas">
             <font>
-                <Font name="Calibri" size="18.0"/>
+                <Font name="Calibri" size="18.0" />
             </font>
         </Label>
-        <Button fx:id="botonNueva" layoutX="338.0" layoutY="21.0" mnemonicParsing="false"
-                onAction="#abrirNuevaReceta" text="Nueva">
+        <Button fx:id="botonNueva" layoutX="338.0" layoutY="21.0" mnemonicParsing="false" onAction="#abrirNuevaReceta" text="Nueva">
             <font>
-                <Font name="Calibri" size="18.0"/>
+                <Font name="Calibri" size="18.0" />
             </font>
         </Button>
-        <Button fx:id="botonEditar" layoutX="474.0" layoutY="21.0" mnemonicParsing="false"
-                onAction="#abrirEditarReceta" text="Editar">
+        <Button fx:id="botonEditar" layoutX="474.0" layoutY="21.0" mnemonicParsing="false" onAction="#abrirEditarReceta" text="Editar">
             <font>
-                <Font name="Calibri" size="18.0"/>
+                <Font name="Calibri" size="18.0" />
             </font>
         </Button>
     </Pane>
