@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class PedidosController {
     public TableView tablaPedidos;
@@ -28,6 +29,7 @@ public class PedidosController {
     public TableColumn<ArrayList<String>, String> direccion;
     public TableColumn<ArrayList<String>, String> email;
     public TableColumn<ArrayList<String>, String> telefono;
+    public TableColumn<ArrayList<String>, String> indice;
 
     public void initialize() throws SQLException {
 
@@ -35,6 +37,7 @@ public class PedidosController {
 
         ArrayList<String> row = new ArrayList<>();
 
+        row.add("");
         row.add("Cliente");
         row.add("Receta");
         row.add("Fecha");
@@ -45,10 +48,14 @@ public class PedidosController {
         ObservableList<ArrayList<String>> data = FXCollections.observableArrayList();
         data.add(row);
 
-        ArrayList<String>[] pedidos = resultSetToList(Consulta.consultarPedido(ConexionDB.getConector().getConexion()));
+        String[][] pedidos = resultSetToList(Objects.requireNonNull(Consulta.consultarPedido(ConexionDB.getConector().getConexion())));
 
-        for (int i = 0; i < 6; i++) {
-            data.add(pedidos[i]);
+        for (int i = 0; i < pedidos.length; i++) {
+            ArrayList<String> columna = new ArrayList<>();
+            for (int j = 0; j < pedidos[0].length; j++) {
+                columna.add(pedidos[i][j]);
+            }
+            data.add(columna);
         }
 
         tablaPedidos.setItems(data);
@@ -56,12 +63,13 @@ public class PedidosController {
     }
 
     private void setTableValue() {
-        nombreCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
-        nombreReceta.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
-        fecha.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
-        direccion.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(3)));
-        email.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(4)));
-        telefono.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(5)));
+        indice.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
+        nombreCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
+        nombreReceta.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
+        fecha.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(3)));
+        direccion.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(4)));
+        email.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(5)));
+        telefono.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(6)));
     }
 
     public void abrirNuevoPedido(ActionEvent actionEvent) throws IOException {
@@ -72,16 +80,24 @@ public class PedidosController {
         EditarPedido.show();
     }
 
-    public ArrayList<String>[] resultSetToList(ResultSet rs) throws SQLException {
+    public String[][] resultSetToList(ResultSet rs) throws SQLException {
         ResultSetMetaData metaData = rs.getMetaData();
-        ArrayList<String>[] builder = new ArrayList[metaData.getColumnCount()];
 
-        while (rs.next()) {
-            for (int i = 0; i < metaData.getColumnCount(); i++) {
-                builder[i].add(rs.getString(i));
+        rs.last();
+        int numeroFilas = rs.getRow();
+        String[][] tabla = new String[numeroFilas][metaData.getColumnCount() + 1];
+
+        rs.first();
+        int i = 0;
+        do {
+            tabla[i][0] = String.valueOf(i + 1);
+            for (int j = 1; j < tabla[0].length; j++) {
+                tabla[i][j] = rs.getString(j);
             }
-        }
+            i++;
+        } while (rs.next());
 
-        return builder;
+
+        return tabla;
     }
 }
