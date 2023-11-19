@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Consulta {
     public static ResultSet consultarPedido(Connection conexion) {
         try {
-            String sentencia = "select c.nombre, r.nombre, p.fecha, c.direccion, c.email, c.telefono " +
+            String sentencia = "select p.id, c.nombre, r.nombre, p.fecha, c.direccion, c.email, c.telefono " +
                     "from clientes as c " +
                     "inner join pedido as p " +
                     "ON c.id=p.cliente_id " +
@@ -96,14 +96,13 @@ public class Consulta {
 
         rs.last();
         int numeroFilas = rs.getRow();
-        String[][] tabla = new String[numeroFilas][metaData.getColumnCount() + 1];
+        String[][] tabla = new String[numeroFilas][metaData.getColumnCount()];
 
         rs.first();
         int i = 0;
         do {
-            tabla[i][0] = String.valueOf(i + 1);
-            for (int j = 1; j < tabla[0].length; j++) {
-                tabla[i][j] = rs.getString(j);
+            for (int j = 1; j < tabla[0].length + 1; j++) {
+                tabla[i][j - 1] = rs.getString(j);
             }
             i++;
         } while (rs.next());

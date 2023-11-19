@@ -3,14 +3,14 @@ package com.example.aed_trim1_cakefactory_.controller;
 import com.example.aed_trim1_cakefactory_.modelo.ConexionDB;
 import com.example.aed_trim1_cakefactory_.modelo.crud.Consulta;
 import com.example.aed_trim1_cakefactory_.views.EditarPedido;
+import com.example.aed_trim1_cakefactory_.views.EditarReceta;
 import com.example.aed_trim1_cakefactory_.views.NuevoPedido;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,6 +19,8 @@ import java.util.Objects;
 import static com.example.aed_trim1_cakefactory_.modelo.crud.Consulta.resultSetToTable;
 
 public class PedidosController {
+
+    public static String id = "";
     public TableView tablaPedidos;
     public Button botonCrear;
     public Button botonEditar;
@@ -28,24 +30,12 @@ public class PedidosController {
     public TableColumn<ArrayList<String>, String> direccion;
     public TableColumn<ArrayList<String>, String> email;
     public TableColumn<ArrayList<String>, String> telefono;
-    public TableColumn<ArrayList<String>, String> indice;
+    public TableColumn<ArrayList<String>, String> codigo;
 
     public void initialize() throws SQLException {
 
         setTableValue();
-
-        ArrayList<String> row = new ArrayList<>();
-
-        row.add("");
-        row.add("Cliente");
-        row.add("Receta");
-        row.add("Fecha");
-        row.add("Direccion");
-        row.add("Email");
-        row.add("Teléfono");
-
         ObservableList<ArrayList<String>> data = FXCollections.observableArrayList();
-        data.add(row);
 
         String[][] pedidos = resultSetToTable(Objects.requireNonNull(Consulta.consultarPedido(ConexionDB.getConector().getConexion())));
 
@@ -62,7 +52,7 @@ public class PedidosController {
     }
 
     private void setTableValue() {
-        indice.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
+        codigo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
         nombreCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
         nombreReceta.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
         fecha.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(3)));
@@ -76,7 +66,27 @@ public class PedidosController {
     }
 
     public void abrirEditarPedido(ActionEvent actionEvent) throws IOException {
-        EditarPedido.show();
+        try {
+            TableView.TableViewSelectionModel selectionModel = tablaPedidos.getSelectionModel();
+            ObservableList selectedCells = selectionModel.getSelectedCells();
+
+            TablePosition tablePosition = (TablePosition) selectedCells.get(0);
+            int row = tablePosition.getRow();
+
+            // Obtén la segunda columna de la fila seleccionada
+            TableColumn column = (TableColumn) tablaPedidos.getColumns().get(1);
+            String cellValue = column.getCellData(row).toString();
+            id = cellValue;
+
+            EditarPedido.show();
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Selección nula");
+            alert.setHeaderText("Debe seleccionarse primero una fila");
+            alert.setContentText("Para editar una receta, primero debe seleccionarse");
+            alert.show();
+        }
+
     }
 
 }

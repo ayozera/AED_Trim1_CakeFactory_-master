@@ -12,7 +12,7 @@
     <Pane layoutX="8.0" layoutY="7.0" prefHeight="386.0" prefWidth="583.0">
         <TableView fx:id="tablaPedidos" layoutX="21.0" layoutY="68.0" prefHeight="307.0" prefWidth="546.0">
             <columns>
-            <TableColumn fx:id="indice" prefWidth="75.0" />
+            <TableColumn fx:id="codigo" prefWidth="75.0" text="Código" />
                 <TableColumn fx:id="nombreCliente" prefWidth="75.0" text="Cliente" />
                 <TableColumn fx:id="nombreReceta" prefWidth="75.0" text="Receta" />
             <TableColumn fx:id="fecha" prefWidth="75.0" text="Fecha" />

@@ -11,7 +11,6 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -21,13 +20,9 @@ import static com.example.aed_trim1_cakefactory_.modelo.crud.Consulta.resultSetT
 public class RecetasController {
 
     public static String id = "";
-
-    public static String seleccion = "";
-
     public TableView tablaRecetas;
     public Button botonNueva;
     public Button botonEditar;
-    public TableColumn<ArrayList<String>, String> indice;
     public TableColumn<ArrayList<String>, String> nombreReceta;
     public TableColumn<ArrayList<String>, String> precio;
     public TableColumn<ArrayList<String>, String> codigo;
@@ -52,10 +47,9 @@ public class RecetasController {
     }
 
     private void setTableValue() {
-        indice.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
-        codigo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
-        nombreReceta.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
-        precio.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(3)));
+        codigo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
+        nombreReceta.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
+        precio.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
     }
 
     public void abrirNuevaReceta(ActionEvent actionEvent) throws IOException {
@@ -72,7 +66,7 @@ public class RecetasController {
             int row = tablePosition.getRow();
 
             // Obtén la segunda columna de la fila seleccionada
-            TableColumn column = (TableColumn) tablaRecetas.getColumns().get(1);
+            TableColumn column = (TableColumn) tablaRecetas.getColumns().get(0);
             String cellValue = column.getCellData(row).toString();
             id = cellValue;
 
