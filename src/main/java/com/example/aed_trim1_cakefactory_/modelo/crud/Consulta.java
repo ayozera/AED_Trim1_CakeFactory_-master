@@ -48,14 +48,15 @@ public class Consulta {
         return null;
     }
 
-    public static ResultSet consultarIngredientes(Connection conexion) {
+    public static ResultSet consultarIngredientes(Connection conexion, String id) {
         try {
-            String sentencia = "SELECT r.nombre, sum(ri.cantidad*i.precio) as precio " +
+            String sentencia = "SELECT i.nombre, i.cantidad, i.unidadMedida, i.precio " +
                     "FROM `receta` as r " +
                     "INNER JOIN receta_ingrediente as ri " +
                     "on r.id=ri.receta_id " +
                     "INNER JOIN ingredientes as i " +
-                    "on ri.ingrediente_id=i.id";
+                    "on ri.ingrediente_id=i.id " +
+                    "where r.id = " + id + ";";
 
             Statement estamento = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
             return estamento.executeQuery(sentencia);
