@@ -4,48 +4,39 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="375.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.aed_trim1_cakefactory_.controller.NuevoPedidoController">
-   <Pane layoutX="13.0" layoutY="12.0" prefHeight="352.0" prefWidth="366.0">
-      <Button fx:id="botonCrear" layoutX="215.0" layoutY="289.0" mnemonicParsing="false" onAction="#crearPedido"
-              text="Crear">
+<AnchorPane prefHeight="337.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.NuevoPedidoController">
+   <Pane layoutX="13.0" layoutY="12.0" prefHeight="316.0" prefWidth="366.0">
+      <Button fx:id="botonCrear" layoutX="216.0" layoutY="248.0" mnemonicParsing="false" onAction="#crearPedido" text="Crear">
          <font>
-            <Font name="Calibri" size="18.0"/>
+            <Font name="Calibri" size="18.0" />
          </font>
       </Button>
       <Label layoutX="132.0" layoutY="28.0" text="Nuevo Pedido">
          <font>
-            <Font name="Calibri" size="18.0"/>
+            <Font name="Calibri" size="18.0" />
          </font>
       </Label>
       <Label layoutX="44.0" layoutY="138.0" text="Receta">
          <font>
-            <Font name="Calibri" size="18.0"/>
+            <Font name="Calibri" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="46.0" layoutY="190.0" text="Comensales">
+      <Label layoutX="47.0" layoutY="196.0" text="Fecha">
          <font>
-            <Font name="Calibri" size="18.0"/>
-         </font>
-      </Label>
-      <Label layoutX="47.0" layoutY="236.0" text="Fecha">
-         <font>
-            <Font name="Calibri" size="18.0"/>
+            <Font name="Calibri" size="18.0" />
          </font>
       </Label>
       <Label layoutX="43.0" layoutY="85.0" text="Cliente">
          <font>
-            <Font name="Calibri" size="18.0"/>
+            <Font name="Calibri" size="18.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="choiceCliente" layoutX="160.0" layoutY="83.0" prefHeight="25.0" prefWidth="175.0"/>
-      <ChoiceBox fx:id="choiceReceta" layoutX="160.0" layoutY="136.0" prefHeight="25.0" prefWidth="175.0"/>
-      <DatePicker fx:id="dateFecha" layoutX="160.0" layoutY="236.0"/>
-      <TextField fx:id="textfieldComensales" layoutX="160.0" layoutY="188.0" prefHeight="25.0" prefWidth="175.0"/>
+      <ChoiceBox fx:id="choiceCliente" layoutX="160.0" layoutY="83.0" prefHeight="25.0" prefWidth="175.0" />
+      <ChoiceBox fx:id="choiceReceta" layoutX="160.0" layoutY="136.0" prefHeight="25.0" prefWidth="175.0" />
+      <DatePicker fx:id="dateFecha" layoutX="161.0" layoutY="195.0" />
    </Pane>
 </AnchorPane>
