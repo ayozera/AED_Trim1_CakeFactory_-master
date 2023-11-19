@@ -29,6 +29,45 @@ public class Consulta {
         return null;
     }
 
+    public static ResultSet consultarReceta(Connection conexion) {
+        try {
+            String sentencia = "SELECT r.id, r.nombre, sum(ri.cantidad*i.precio) as precio " +
+                    "FROM `receta` as r " +
+                    "INNER JOIN receta_ingrediente as ri " +
+                    "on r.id=ri.receta_id " +
+                    "INNER JOIN ingredientes as i " +
+                    "on ri.ingrediente_id=i.id";
+
+            Statement estamento = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            return estamento.executeQuery(sentencia);
+
+        } catch (SQLException e) {
+            System.out.println("[!] El servidor no ha admitido los parámetros de la consulta");
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static ResultSet consultarIngredientes(Connection conexion, String id) {
+        try {
+            String sentencia = "SELECT i.nombre, i.cantidad, i.unidadMedida, i.precio " +
+                    "FROM `receta` as r " +
+                    "INNER JOIN receta_ingrediente as ri " +
+                    "on r.id=ri.receta_id " +
+                    "INNER JOIN ingredientes as i " +
+                    "on ri.ingrediente_id=i.id " +
+                    "where r.id = " + id + ";";
+
+            Statement estamento = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            return estamento.executeQuery(sentencia);
+
+        } catch (SQLException e) {
+            System.out.println("[!] El servidor no ha admitido los parámetros de la consulta");
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public static ArrayList<String> obtenerCampos(String nombreTabla, Connection conexion) throws SQLException {
         DatabaseMetaData meta = conexion.getMetaData();
         ResultSet resultado = meta.getColumns(null, null, nombreTabla, null);
@@ -52,6 +91,25 @@ public class Consulta {
         return listaCampos;
     }
 
+    public static String[][] resultSetToTable(ResultSet rs) throws SQLException {
+        ResultSetMetaData metaData = rs.getMetaData();
 
+        rs.last();
+        int numeroFilas = rs.getRow();
+        String[][] tabla = new String[numeroFilas][metaData.getColumnCount() + 1];
+
+        rs.first();
+        int i = 0;
+        do {
+            tabla[i][0] = String.valueOf(i + 1);
+            for (int j = 1; j < tabla[0].length; j++) {
+                tabla[i][j] = rs.getString(j);
+            }
+            i++;
+        } while (rs.next());
+
+
+        return tabla;
+    }
 }
 
