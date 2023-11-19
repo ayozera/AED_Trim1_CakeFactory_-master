@@ -22,7 +22,6 @@ public class EditarRecetaController {
 
     public void initialize() throws SQLException {
 
-
         String[][] ingredientes = resultSetToTable(Objects.requireNonNull(
                 Consulta.consultarIngredientes(ConexionDB.getConector().getConexion(), RecetasController.id)));
 

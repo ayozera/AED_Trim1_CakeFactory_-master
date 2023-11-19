@@ -3,6 +3,7 @@ package com.example.aed_trim1_cakefactory_.controller;
 import com.example.aed_trim1_cakefactory_.modelo.entidades.Usuario;
 import com.example.aed_trim1_cakefactory_.modelo.excepciones.CampoVacioException;
 import com.example.aed_trim1_cakefactory_.modelo.excepciones.UsuarioNoValidoException;
+import com.example.aed_trim1_cakefactory_.views.LogIn;
 import com.example.aed_trim1_cakefactory_.views.MenuPrincipal;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
@@ -34,6 +35,7 @@ public class LogInController {
             } catch (Exception e) {
             }
             MenuPrincipal.show();
+            LogIn.getStageLogIn().setOpacity(0.0);
 
         } catch (UsuarioNoValidoException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);

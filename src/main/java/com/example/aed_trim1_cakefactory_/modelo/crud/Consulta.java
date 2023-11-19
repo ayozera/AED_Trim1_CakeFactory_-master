@@ -68,6 +68,34 @@ public class Consulta {
         return null;
     }
 
+    public static ResultSet consultarNombreCliente(Connection conexion) {
+        try {
+            String sentencia = "SELECT nombre FROM `clientes`;";
+
+            Statement estamento = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            return estamento.executeQuery(sentencia);
+
+        } catch (SQLException e) {
+            System.out.println("[!] El servidor no ha admitido los parámetros de la consulta");
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static ResultSet consultarNombreReceta(Connection conexion) {
+        try {
+            String sentencia = "SELECT nombre FROM `receta`;";
+
+            Statement estamento = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            return estamento.executeQuery(sentencia);
+
+        } catch (SQLException e) {
+            System.out.println("[!] El servidor no ha admitido los parámetros de la consulta");
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public static ArrayList<String> obtenerCampos(String nombreTabla, Connection conexion) throws SQLException {
         DatabaseMetaData meta = conexion.getMetaData();
         ResultSet resultado = meta.getColumns(null, null, nombreTabla, null);
@@ -109,6 +137,15 @@ public class Consulta {
 
 
         return tabla;
+    }
+
+    public static ArrayList<String> resultSetToList(ResultSet rs) throws SQLException {
+        ArrayList<String> lista = new ArrayList<>();
+        rs.first();
+        do {
+            lista.add(rs.getString(0));
+        } while (rs.next());
+        return lista;
     }
 }
 

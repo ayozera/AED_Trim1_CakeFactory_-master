@@ -9,49 +9,59 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="375.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane prefHeight="478.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.aed_trim1_cakefactory_.controller.EditarPedidoController">
-   <Pane layoutX="13.0" layoutY="12.0" prefHeight="352.0" prefWidth="366.0">
-      <Button fx:id="botonEditar" layoutX="160.0" layoutY="282.0" mnemonicParsing="false" onAction="#editarPedido"
-              text="Editar">
+   <Pane layoutX="13.0" layoutY="12.0" prefHeight="451.0" prefWidth="366.0">
+      <Button fx:id="botonEditar" layoutX="149.0" layoutY="388.0" mnemonicParsing="false" onAction="#editarPedido" text="Editar">
          <font>
-            <Font name="Calibri" size="18.0"/>
+            <Font name="Calibri" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="132.0" layoutY="28.0" text="Editar Pedido">
+      <Label layoutX="134.0" layoutY="14.0" text="Editar Pedido">
          <font>
-            <Font name="Calibri" size="18.0"/>
+            <Font name="Calibri" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="44.0" layoutY="138.0" text="Receta">
+      <Label layoutX="46.0" layoutY="118.0" text="Receta">
          <font>
-            <Font name="Calibri" size="18.0"/>
+            <Font name="Calibri" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="46.0" layoutY="190.0" text="Comensales">
+      <Label layoutX="47.0" layoutY="174.0" text="Fecha">
          <font>
-            <Font name="Calibri" size="18.0"/>
+            <Font name="Calibri" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="47.0" layoutY="236.0" text="Fecha">
+      <Label layoutX="47.0" layoutY="62.0" text="Cliente">
          <font>
-            <Font name="Calibri" size="18.0"/>
+            <Font name="Calibri" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="43.0" layoutY="85.0" text="Cliente">
+      <ChoiceBox fx:id="choiceCliente" layoutX="160.0" layoutY="60.0" prefHeight="25.0" prefWidth="175.0" />
+      <ChoiceBox fx:id="choiceReceta" layoutX="160.0" layoutY="116.0" prefHeight="25.0" prefWidth="175.0" />
+      <DatePicker fx:id="dateFecha" layoutX="160.0" layoutY="172.0" />
+      <Button fx:id="botonBorrar" layoutX="264.0" layoutY="388.0" mnemonicParsing="false" onAction="#borrarPedido" text="Borrar">
          <font>
-            <Font name="Calibri" size="18.0"/>
-         </font>
-      </Label>
-      <ChoiceBox fx:id="choiceCliente" layoutX="160.0" layoutY="83.0" prefHeight="25.0" prefWidth="175.0"/>
-      <ChoiceBox fx:id="choiceReceta" layoutX="160.0" layoutY="136.0" prefHeight="25.0" prefWidth="175.0"/>
-      <DatePicker fx:id="dateFecha" layoutX="160.0" layoutY="236.0"/>
-      <TextField fx:id="textfieldComensales" layoutX="160.0" layoutY="188.0" prefHeight="25.0" prefWidth="175.0"/>
-      <Button fx:id="botonBorrar" layoutX="264.0" layoutY="282.0" mnemonicParsing="false" onAction="#borrarPedido"
-              text="Borrar">
-         <font>
-            <Font name="Calibri" size="18.0"/>
+            <Font name="Calibri" size="18.0" />
          </font>
       </Button>
+      <TextField fx:id="textfieldDireccion" layoutX="160.0" layoutY="226.0" prefHeight="25.0" prefWidth="175.0" />
+      <TextField fx:id="textfieldEmail" layoutX="160.0" layoutY="279.0" prefHeight="25.0" prefWidth="175.0" />
+      <TextField fx:id="textfieldTelefono" layoutX="160.0" layoutY="328.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label layoutX="47.0" layoutY="228.0" prefHeight="22.0" prefWidth="71.0" text="Dirección">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="281.0" text="Email">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="330.0" prefHeight="22.0" prefWidth="71.0" text="Teléfono">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Label>
    </Pane>
 </AnchorPane>

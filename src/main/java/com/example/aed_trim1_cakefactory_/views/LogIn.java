@@ -16,4 +16,8 @@ public class LogIn {
         stageLogIn.setScene(scene);
         stageLogIn.show();
     }
+
+    public static Stage getStageLogIn() {
+        return stageLogIn;
+    }
 }

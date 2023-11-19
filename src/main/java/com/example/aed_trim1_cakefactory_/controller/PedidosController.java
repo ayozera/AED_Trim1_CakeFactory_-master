@@ -21,6 +21,12 @@ import static com.example.aed_trim1_cakefactory_.modelo.crud.Consulta.resultSetT
 public class PedidosController {
 
     public static String id = "";
+    public static String nombreClienteText;
+    public static String nombreRecetaText;
+    public static String fechaText;
+    public static String direccionText;
+    public static String emailText;
+    public static String telefonoText;
     public TableView tablaPedidos;
     public Button botonCrear;
     public Button botonEditar;
@@ -73,13 +79,24 @@ public class PedidosController {
             TablePosition tablePosition = (TablePosition) selectedCells.get(0);
             int row = tablePosition.getRow();
 
-            // Obtén la segunda columna de la fila seleccionada
-            TableColumn column = (TableColumn) tablaPedidos.getColumns().get(1);
-            String cellValue = column.getCellData(row).toString();
-            id = cellValue;
+            TableColumn column1 = (TableColumn) tablaPedidos.getColumns().get(0);
+            id = column1.getCellData(row).toString();
+            TableColumn column2 = (TableColumn) tablaPedidos.getColumns().get(1);
+            nombreClienteText = column2.getCellData(row).toString();
+            TableColumn column3 = (TableColumn) tablaPedidos.getColumns().get(2);
+            nombreRecetaText = column3.getCellData(row).toString();
+            TableColumn column4 = (TableColumn) tablaPedidos.getColumns().get(3);
+            fechaText = column4.getCellData(row).toString();
+            TableColumn column5 = (TableColumn) tablaPedidos.getColumns().get(4);
+            direccionText = column5.getCellData(row).toString();
+            TableColumn column6 = (TableColumn) tablaPedidos.getColumns().get(5);
+            emailText = column6.getCellData(row).toString();
+            TableColumn column7 = (TableColumn) tablaPedidos.getColumns().get(6);
+            telefonoText = column7.getCellData(row).toString();
 
             EditarPedido.show();
         } catch (Exception e) {
+            e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Selección nula");
             alert.setHeaderText("Debe seleccionarse primero una fila");

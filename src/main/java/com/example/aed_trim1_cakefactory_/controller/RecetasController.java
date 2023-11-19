@@ -67,8 +67,7 @@ public class RecetasController {
 
             // Obtén la segunda columna de la fila seleccionada
             TableColumn column = (TableColumn) tablaRecetas.getColumns().get(0);
-            String cellValue = column.getCellData(row).toString();
-            id = cellValue;
+            id = column.getCellData(row).toString();
 
             EditarReceta.show();
         } catch (Exception e) {
