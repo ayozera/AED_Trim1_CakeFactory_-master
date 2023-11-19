@@ -10,6 +10,7 @@ public class Delete {
 
         try (PreparedStatement statement = ConexionDB.getConector().getConexion().prepareStatement("DELETE FROM " + nombreTabla + " WHERE id = ?")) {
             statement.setObject(1, id);
+            statement.executeUpdate();
         }
     }
 }
