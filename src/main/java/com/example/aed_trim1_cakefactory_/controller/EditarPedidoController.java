@@ -2,13 +2,12 @@ package com.example.aed_trim1_cakefactory_.controller;
 
 import com.example.aed_trim1_cakefactory_.modelo.ConexionDB;
 import com.example.aed_trim1_cakefactory_.modelo.crud.Consulta;
+import com.example.aed_trim1_cakefactory_.modelo.crud.Delete;
+import com.example.aed_trim1_cakefactory_.views.EditarPedido;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -44,8 +43,19 @@ public class EditarPedidoController {
         textfieldTelefono.setText(PedidosController.telefonoText);
     }
     public void editarPedido(ActionEvent actionEvent) {
+
     }
 
     public void borrarPedido(ActionEvent actionEvent) {
+        try {
+            Delete.eliminarRegistros("pedido",PedidosController.id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Selección nula");
+            alert.setHeaderText("No se ha borrado ningún registro");
+            alert.setContentText("Esto puede suceder si el registro ha sido borrado previamente");
+            alert.show();
+        }
     }
 }

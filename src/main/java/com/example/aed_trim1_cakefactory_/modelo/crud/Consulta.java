@@ -36,7 +36,8 @@ public class Consulta {
                     "INNER JOIN receta_ingrediente as ri " +
                     "on r.id=ri.receta_id " +
                     "INNER JOIN ingredientes as i " +
-                    "on ri.ingrediente_id=i.id";
+                    "on ri.ingrediente_id=i.id " +
+                    "group by r.id, r.nombre;";
 
             Statement estamento = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
             return estamento.executeQuery(sentencia);
@@ -143,7 +144,7 @@ public class Consulta {
         ArrayList<String> lista = new ArrayList<>();
         rs.first();
         do {
-            lista.add(rs.getString(0));
+            lista.add(rs.getString(1));
         } while (rs.next());
         return lista;
     }
