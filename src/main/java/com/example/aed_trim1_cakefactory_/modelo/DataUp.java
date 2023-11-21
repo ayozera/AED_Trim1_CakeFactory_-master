@@ -1,5 +1,6 @@
 package com.example.aed_trim1_cakefactory_.modelo;
 
+import com.example.aed_trim1_cakefactory_.modelo.crud.MapaConsultas;
 import com.example.aed_trim1_cakefactory_.modelo.entidades.Credencial;
 
 import java.io.*;
@@ -37,5 +38,27 @@ public class DataUp {
             //Se ha terminado de leer el archivo
         }
         return credenciales;
+    }
+
+    public static void guardarMapaConsultas(MapaConsultas consultas, String ruta)
+            throws FileNotFoundException, IOException {
+
+        File fichero = new File(ruta);
+        try (ObjectOutputStream obj_OOS = new ObjectOutputStream(new FileOutputStream(fichero))) {
+            obj_OOS.writeObject(consultas);
+            obj_OOS.flush();
+        }
+    }
+
+    public static MapaConsultas cargarMapaConsultas(String ruta)
+            throws FileNotFoundException, IOException, ClassNotFoundException {
+
+        try (ObjectInputStream obj_OIS = new ObjectInputStream(new FileInputStream(ruta))) {
+            return (MapaConsultas)obj_OIS.readObject();
+        } catch(EOFException e ) {
+            //Se ha terminado de leer el archivo
+        }
+
+        return null;
     }
 }

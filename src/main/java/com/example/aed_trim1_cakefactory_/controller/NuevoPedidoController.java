@@ -16,4 +16,7 @@ public class NuevoPedidoController {
 
     public void crearPedido(ActionEvent actionEvent) {
     }
+
+    public void cerrarSesion(ActionEvent actionEvent) {
+    }
 }

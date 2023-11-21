@@ -1,6 +1,7 @@
 package com.example.aed_trim1_cakefactory_.controller;
 
 import com.example.aed_trim1_cakefactory_.modelo.ConexionDB;
+import com.example.aed_trim1_cakefactory_.modelo.DataUp;
 import com.example.aed_trim1_cakefactory_.modelo.crud.Consulta;
 import com.example.aed_trim1_cakefactory_.views.EditarPedido;
 import com.example.aed_trim1_cakefactory_.views.EditarReceta;
@@ -38,12 +39,12 @@ public class PedidosController {
     public TableColumn<ArrayList<String>, String> telefono;
     public TableColumn<ArrayList<String>, String> codigo;
 
-    public void initialize() throws SQLException {
+    public void initialize() throws SQLException, IOException, ClassNotFoundException {
 
         setTableValue();
         ObservableList<ArrayList<String>> data = FXCollections.observableArrayList();
 
-        String[][] pedidos = resultSetToTable(Objects.requireNonNull(Consulta.consultarPedido(ConexionDB.getConector().getConexion())));
+        String[][] pedidos = resultSetToTable(Objects.requireNonNull(DataUp.cargarMapaConsultas("src/main/files/mapaConsultas.bin").consultar(ConexionDB.getConector().getConexion(), "consultarPedido")));
 
         for (int i = 0; i < pedidos.length; i++) {
             ArrayList<String> columna = new ArrayList<>();
@@ -96,7 +97,6 @@ public class PedidosController {
 
             EditarPedido.show();
         } catch (Exception e) {
-            e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Selección nula");
             alert.setHeaderText("Debe seleccionarse primero una fila");
@@ -106,4 +106,6 @@ public class PedidosController {
 
     }
 
+    public void cerrarSesion(ActionEvent actionEvent) {
+    }
 }

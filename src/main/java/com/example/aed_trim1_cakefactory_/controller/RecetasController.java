@@ -1,7 +1,9 @@
 package com.example.aed_trim1_cakefactory_.controller;
 
 import com.example.aed_trim1_cakefactory_.modelo.ConexionDB;
+import com.example.aed_trim1_cakefactory_.modelo.DataUp;
 import com.example.aed_trim1_cakefactory_.modelo.crud.Consulta;
+import com.example.aed_trim1_cakefactory_.modelo.crud.MapaConsultas;
 import com.example.aed_trim1_cakefactory_.views.EditarReceta;
 import com.example.aed_trim1_cakefactory_.views.NuevaReceta;
 import javafx.beans.property.SimpleStringProperty;
@@ -27,12 +29,11 @@ public class RecetasController {
     public TableColumn<ArrayList<String>, String> precio;
     public TableColumn<ArrayList<String>, String> codigo;
 
-    public void initialize() throws SQLException {
+    public void initialize() throws SQLException, IOException, ClassNotFoundException {
 
         setTableValue();
         ObservableList<ArrayList<String>> data = FXCollections.observableArrayList();
-
-        String[][] recetas = resultSetToTable(Objects.requireNonNull(Consulta.consultarReceta(ConexionDB.getConector().getConexion())));
+        String[][] recetas = resultSetToTable(Objects.requireNonNull(DataUp.cargarMapaConsultas("src/main/files/mapaConsultas.bin").consultar(ConexionDB.getConector().getConexion(), "consultarReceta")));
 
         for (int i = 0; i < recetas.length; i++) {
             ArrayList<String> columna = new ArrayList<>();
@@ -78,5 +79,8 @@ public class RecetasController {
             alert.show();
         }
 
+    }
+
+    public void cerrarSesion(ActionEvent actionEvent) {
     }
 }

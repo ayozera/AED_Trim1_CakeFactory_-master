@@ -51,4 +51,7 @@ public class LogInController {
         }
 
     }
+
+    public void exit(ActionEvent actionEvent) {
+    }
 }

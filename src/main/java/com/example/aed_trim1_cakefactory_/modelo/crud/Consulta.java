@@ -1,7 +1,10 @@
 package com.example.aed_trim1_cakefactory_.modelo.crud;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
+
+import static com.example.aed_trim1_cakefactory_.modelo.DataUp.cargarMapaConsultas;
 
 
 /**
@@ -9,6 +12,19 @@ import java.util.ArrayList;
  * @author Ayoze Rodríguez Álvarez
  */
 public class Consulta {
+
+/*    public static MapaConsultas mapaConsultas;
+
+    static {
+        try {
+            mapaConsultas = cargarMapaConsultas("src/main/files/mapaConsultas.bin");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }*/
+
     public static ResultSet consultarPedido(Connection conexion) {
         try {
             String sentencia = "select p.id, c.nombre, r.nombre, p.fecha, c.direccion, c.email, c.telefono " +

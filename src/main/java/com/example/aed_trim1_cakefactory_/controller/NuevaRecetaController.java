@@ -35,4 +35,7 @@ public class NuevaRecetaController {
 
     public void abrirCuenta(ActionEvent actionEvent) {
     }
+
+    public void cerrarSesion(ActionEvent actionEvent) {
+    }
 }
