@@ -38,6 +38,7 @@ public class PedidosController {
     public TableColumn<ArrayList<String>, String> email;
     public TableColumn<ArrayList<String>, String> telefono;
     public TableColumn<ArrayList<String>, String> codigo;
+    public Button botonCerrarSesion;
 
     public void initialize() throws SQLException, IOException, ClassNotFoundException {
 

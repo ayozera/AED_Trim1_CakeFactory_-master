@@ -44,9 +44,7 @@
       </Label>
       <DatePicker fx:id="dateFecha" layoutX="199.0" layoutY="233.0" prefHeight="25.0" prefWidth="175.0" />
       <ImageView fitHeight="74.0" fitWidth="98.0" layoutX="34.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/CakeFactoryLogo.png" />
-         </image>
+         <Image url="@../../../images/CakeFactoryLogo.png"/>
       </ImageView>
       <ComboBox layoutX="198.0" layoutY="122.0" prefHeight="25.0" prefWidth="175.0" promptText="Selecciona el cliente" />
       <ComboBox layoutX="198.0" layoutY="175.0" prefHeight="25.0" prefWidth="175.0" promptText="¿Qué receta quiere?" />

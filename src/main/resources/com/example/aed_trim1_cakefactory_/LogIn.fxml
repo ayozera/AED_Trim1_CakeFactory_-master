@@ -15,56 +15,58 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.LogInController">
    <Pane layoutX="32.0" layoutY="15.0" prefHeight="457.0" prefWidth="534.0">
-      <children>
-         <Pane id="imagenFondo" blendMode="MULTIPLY" layoutX="-32.0" layoutY="-15.0" prefHeight="488.0" prefWidth="599.0" style="-fx-border-color: #ba5c12ff; -fx-border-width: 5px;" stylesheets="@../../../stylesheets/login.css">
-            <children>
-               <Label layoutX="137.0" layoutY="42.0" prefHeight="82.0" prefWidth="393.0" text="Bienvenido a Cake Factory" textFill="#031d44">
-                  <font>
-                     <Font name="Calibri Bold Italic" size="36.0" />
-                  </font>
-                  <effect>
-                     <ColorAdjust brightness="-1.0" contrast="-1.0" hue="-1.0" saturation="-1.0">
-                        <input>
-                           <Glow />
-                        </input>
-                     </ColorAdjust>
-                  </effect>
-               </Label>
-               <Label layoutX="116.0" layoutY="199.0" text="Usuario:" textFill="#031d44">
-                  <font>
-                     <Font name="Calibri" size="24.0" />
-                  </font>
-               </Label>
-               <TextField fx:id="textfieldUsuario" layoutX="333.0" layoutY="192.0" prefHeight="42.0" prefWidth="181.0" promptText="Introduce tu usuario" />
-               <Label layoutX="114.0" layoutY="284.0" text="Contraseña:" textFill="#031d44">
-                  <font>
-                     <Font name="Calibri" size="24.0" />
-                  </font>
-               </Label>
-               <PasswordField fx:id="textfieldClave" layoutX="333.0" layoutY="277.0" prefHeight="42.0" prefWidth="181.0" promptText="Introduce tu contraseña" />
-               <Button id="signin" layoutX="430.0" layoutY="375.0" mnemonicParsing="false" onAction="#signIn" style="-fx-background-color: #031d44ff;" text="Ingresar" textFill="WHITE" underline="true">
-                  <font>
-                     <Font name="Calibri" size="18.0" />
-                  </font>
-                  <effect>
-                     <MotionBlur radius="1.11" />
-                  </effect>
-               </Button>
-               <Button id="signin" layoutX="112.0" layoutY="375.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: #031d44ff;" text="Salir del sistema" textFill="WHITE" underline="true">
-                  <font>
-                     <Font name="Calibri" size="18.0" />
-                  </font>
-                  <effect>
-                     <MotionBlur radius="1.11" />
-                  </effect>
-               </Button>
-               <ImageView fitHeight="99.0" fitWidth="100.0" layoutX="17.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../../../images/CakeFactoryLogo.png" />
-                  </image>
-               </ImageView>
-            </children>
-         </Pane>
-      </children>
+      <Pane id="imagenFondo" blendMode="MULTIPLY" layoutX="-32.0" layoutY="-15.0" prefHeight="488.0"
+            prefWidth="599.0" style="-fx-border-color: #ba5c12ff; -fx-border-width: 5px;"
+            stylesheets="@../../../stylesheets/login.css">
+         <Label layoutX="137.0" layoutY="42.0" prefHeight="82.0" prefWidth="393.0" text="Bienvenido a Cake Factory"
+                textFill="#031d44">
+            <font>
+               <Font name="Calibri Bold Italic" size="36.0"/>
+            </font>
+            <effect>
+               <ColorAdjust brightness="-1.0" contrast="-1.0" hue="-1.0" saturation="-1.0">
+                  <input>
+                     <Glow/>
+                  </input>
+               </ColorAdjust>
+            </effect>
+         </Label>
+         <Label layoutX="116.0" layoutY="199.0" text="Usuario:" textFill="#031d44">
+            <font>
+               <Font name="Calibri" size="24.0"/>
+            </font>
+         </Label>
+         <TextField fx:id="textfieldUsuario" layoutX="333.0" layoutY="192.0" prefHeight="42.0" prefWidth="181.0"
+                    promptText="Introduce tu usuario"/>
+         <Label layoutX="114.0" layoutY="284.0" text="Contraseña:" textFill="#031d44">
+            <font>
+               <Font name="Calibri" size="24.0"/>
+            </font>
+         </Label>
+         <PasswordField fx:id="textfieldClave" layoutX="333.0" layoutY="277.0" prefHeight="42.0" prefWidth="181.0"
+                        promptText="Introduce tu contraseña"/>
+         <Button id="signin" layoutX="430.0" layoutY="375.0" mnemonicParsing="false" onAction="#signIn"
+                 style="-fx-background-color: #031d44ff;" text="Ingresar" textFill="WHITE" underline="true">
+            <font>
+               <Font name="Calibri" size="18.0"/>
+            </font>
+            <effect>
+               <MotionBlur radius="1.11"/>
+            </effect>
+         </Button>
+         <Button id="signin" layoutX="112.0" layoutY="375.0" mnemonicParsing="false" onAction="#exit"
+                 style="-fx-background-color: #031d44ff;" text="Salir del sistema" textFill="WHITE" underline="true">
+            <font>
+               <Font name="Calibri" size="18.0"/>
+            </font>
+            <effect>
+               <MotionBlur radius="1.11"/>
+            </effect>
+         </Button>
+         <ImageView fitHeight="99.0" fitWidth="100.0" layoutX="17.0" layoutY="33.0" pickOnBounds="true"
+                    preserveRatio="true">
+            <Image url="@../../../images/CakeFactoryLogo.png"/>
+         </ImageView>
+      </Pane>
    </Pane>
 </AnchorPane>

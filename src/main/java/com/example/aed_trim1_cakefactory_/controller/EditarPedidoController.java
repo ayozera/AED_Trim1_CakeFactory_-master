@@ -26,6 +26,7 @@ public class EditarPedidoController {
     public TextField textfieldDireccion;
     public TextField textfieldEmail;
     public TextField textfieldTelefono;
+    public Button botonCerrarSesion;
 
     public void initialize() throws SQLException, IOException, ClassNotFoundException {
 

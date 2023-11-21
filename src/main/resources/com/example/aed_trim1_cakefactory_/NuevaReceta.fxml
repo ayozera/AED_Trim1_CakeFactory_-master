@@ -107,9 +107,8 @@
       </effect>
    </Button>
    <ImageView fitHeight="79.0" fitWidth="126.0" layoutX="113.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-         <Image url="@../../../images/CakeFactoryLogo.png" />
-      </image></ImageView>
+      <Image url="@../../../images/CakeFactoryLogo.png"/>
+   </ImageView>
    <Label layoutX="48.0" layoutY="123.0" text="Nombre:">
       <font>
          <Font name="Calibri Bold Italic" size="24.0" />

@@ -42,11 +42,10 @@
             <MotionBlur radius="1.11" />
          </effect>
         </Button>
-      <ImageView fitHeight="86.0" fitWidth="118.0" layoutX="132.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/CakeFactoryLogo.png" />
-         </image>
-      </ImageView>
+        <ImageView fitHeight="86.0" fitWidth="118.0" layoutX="132.0" layoutY="15.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../../../images/CakeFactoryLogo.png"/>
+        </ImageView>
     </Pane>
    <Button fx:id="botonCerrarSesion" layoutX="42.0" layoutY="513.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: rgb(134, 10, 3);" text="Cerrar sesión" textFill="WHITE" underline="true">
       <cursor>

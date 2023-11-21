@@ -28,6 +28,7 @@ public class RecetasController {
     public TableColumn<ArrayList<String>, String> nombreReceta;
     public TableColumn<ArrayList<String>, String> precio;
     public TableColumn<ArrayList<String>, String> codigo;
+    public Button botonCerrarSesion;
 
     public void initialize() throws SQLException, IOException, ClassNotFoundException {
 

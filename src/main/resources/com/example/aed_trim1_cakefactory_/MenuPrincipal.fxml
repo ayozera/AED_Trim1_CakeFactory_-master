@@ -15,10 +15,10 @@
 <AnchorPane prefHeight="453.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.MenuPrincipalController">
    
    <Pane id="fondoPrueba" prefHeight="454.0" prefWidth="637.0" style="-fx-background-color: rgb(235, 230, 211); -fx-border-color: #ba5c12ff; -fx-border-width: 5px;" stylesheets="@../../../stylesheets/menuPrincipal.css">
-      <ImageView id="imagenMenu" fitHeight="334.0" fitWidth="355.0" layoutX="47.0" layoutY="68.0" opacity="0.86" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/CakeFactoryLogo.png" />
-         </image></ImageView>
+      <ImageView id="imagenMenu" fitHeight="334.0" fitWidth="355.0" layoutX="47.0" layoutY="68.0" opacity="0.86"
+                 pickOnBounds="true" preserveRatio="true">
+         <Image url="@../../../images/CakeFactoryLogo.png"/>
+      </ImageView>
       <Button fx:id="botonRecetas" layoutX="437.0" layoutY="143.0" mnemonicParsing="false" onAction="#abrirRecetas" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: #031d44ff;" text="Recetas" textFill="WHITE" underline="true">
          <font>
             <Font name="Calibri" size="18.0" />

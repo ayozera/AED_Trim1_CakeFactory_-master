@@ -72,10 +72,9 @@
             <Font name="Calibri Italic" size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="107.0" fitWidth="99.0" layoutX="35.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/CakeFactoryLogo.png" />
-         </image>
+      <ImageView fitHeight="107.0" fitWidth="99.0" layoutX="35.0" layoutY="6.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <Image url="@../../../images/CakeFactoryLogo.png"/>
       </ImageView>
       <Button fx:id="botonCerrarSesion" layoutX="28.0" layoutY="503.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: rgb(134, 10, 3);" text="Cerrar sesión" textFill="WHITE" underline="true">
          <cursor>

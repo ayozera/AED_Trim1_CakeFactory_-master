@@ -22,6 +22,14 @@ public class NuevaRecetaController {
     public Button botonCrear1;
     public ComboBox comboBoxIngredientes;
     public Button botonCuenta;
+    public Button botonCerrarSesion;
+    public RadioButton radioButtonUnidades;
+    public RadioButton radioButtonMililitros;
+    public RadioButton radioButtonGramos;
+    public Button botonAgnadirIngredientes;
+    public Spinner spinnerCantidad;
+    public ListView listViewIngredientes;
+    public Button botonAgregarReceta;
 
     public void initialize() throws SQLException {
 
