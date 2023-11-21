@@ -1,67 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="478.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.aed_trim1_cakefactory_.controller.EditarPedidoController">
-   <Pane layoutX="13.0" layoutY="12.0" prefHeight="451.0" prefWidth="366.0">
-      <Button fx:id="botonEditar" layoutX="149.0" layoutY="388.0" mnemonicParsing="false" onAction="#editarPedido" text="Editar">
+<AnchorPane prefHeight="502.0" prefWidth="459.0" style="-fx-background-color: rgb(235, 230, 211); -fx-border-color: #ba5c12ff; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.EditarPedidoController">
+   <Pane layoutX="8.0" layoutY="5.0" prefHeight="542.0" prefWidth="442.0">
+      <Button fx:id="botonEditar" layoutX="202.0" layoutY="446.0" mnemonicParsing="false" onAction="#editarPedido" style="-fx-background-color: #031d44ff;" text="Editar" textFill="WHITE" underline="true">
          <font>
             <Font name="Calibri" size="18.0" />
          </font>
+         <effect>
+            <MotionBlur radius="1.11" />
+         </effect>
       </Button>
-      <Label layoutX="134.0" layoutY="14.0" text="Editar Pedido">
+      <Label layoutX="169.0" layoutY="29.0" text="Editar Pedido">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="System Bold Italic" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="46.0" layoutY="118.0" text="Receta">
+      <Label layoutX="99.0" layoutY="176.0" text="Receta:">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="47.0" layoutY="174.0" text="Fecha">
+      <Label layoutX="100.0" layoutY="232.0" text="Fecha:">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="47.0" layoutY="62.0" text="Cliente">
+      <Label layoutX="100.0" layoutY="120.0" text="Cliente:">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri Italic" size="18.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="choiceCliente" layoutX="160.0" layoutY="60.0" prefHeight="25.0" prefWidth="175.0" />
-      <ChoiceBox fx:id="choiceReceta" layoutX="160.0" layoutY="116.0" prefHeight="25.0" prefWidth="175.0" />
-      <DatePicker fx:id="dateFecha" layoutX="160.0" layoutY="172.0" />
-      <Button fx:id="botonBorrar" layoutX="264.0" layoutY="388.0" mnemonicParsing="false" onAction="#borrarPedido" text="Borrar">
+      <ChoiceBox fx:id="choiceCliente" layoutX="213.0" layoutY="118.0" prefHeight="25.0" prefWidth="175.0" />
+      <ChoiceBox fx:id="choiceReceta" layoutX="213.0" layoutY="174.0" prefHeight="25.0" prefWidth="175.0" />
+      <DatePicker fx:id="dateFecha" layoutX="213.0" layoutY="230.0" />
+      <Button fx:id="botonBorrar" layoutX="317.0" layoutY="446.0" mnemonicParsing="false" onAction="#borrarPedido" style="-fx-background-color: #031d44ff;" text="Borrar" textFill="WHITE" underline="true">
          <font>
             <Font name="Calibri" size="18.0" />
          </font>
+         <effect>
+            <MotionBlur radius="1.11" />
+         </effect>
       </Button>
-      <TextField fx:id="textfieldDireccion" layoutX="160.0" layoutY="226.0" prefHeight="25.0" prefWidth="175.0" />
-      <TextField fx:id="textfieldEmail" layoutX="160.0" layoutY="279.0" prefHeight="25.0" prefWidth="175.0" />
-      <TextField fx:id="textfieldTelefono" layoutX="160.0" layoutY="328.0" prefHeight="25.0" prefWidth="175.0" />
-      <Label layoutX="47.0" layoutY="228.0" prefHeight="22.0" prefWidth="71.0" text="Dirección">
+      <TextField fx:id="textfieldDireccion" layoutX="213.0" layoutY="284.0" prefHeight="25.0" prefWidth="175.0" />
+      <TextField fx:id="textfieldEmail" layoutX="213.0" layoutY="337.0" prefHeight="25.0" prefWidth="175.0" />
+      <TextField fx:id="textfieldTelefono" layoutX="213.0" layoutY="386.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label layoutX="100.0" layoutY="286.0" prefHeight="22.0" prefWidth="83.0" text="Dirección:">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="48.0" layoutY="281.0" text="Email">
+      <Label layoutX="101.0" layoutY="339.0" text="Email:">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="45.0" layoutY="330.0" prefHeight="22.0" prefWidth="71.0" text="Teléfono">
+      <Label layoutX="98.0" layoutY="388.0" prefHeight="22.0" prefWidth="71.0" text="Teléfono:">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri Italic" size="18.0" />
          </font>
       </Label>
+      <ImageView fitHeight="107.0" fitWidth="99.0" layoutX="35.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/CakeFactoryLogo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="botonCerrarSesion" layoutX="28.0" layoutY="503.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: rgb(134, 10, 3);" text="Cerrar sesión" textFill="WHITE" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <MotionBlur radius="1.11" />
+         </effect>
+      </Button>
    </Pane>
 </AnchorPane>
