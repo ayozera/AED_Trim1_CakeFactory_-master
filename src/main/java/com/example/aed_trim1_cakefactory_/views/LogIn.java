@@ -14,6 +14,7 @@ public class LogIn {
         Scene scene = new Scene(fxmlLoader.load());
         stageLogIn.setTitle("Cake Factory");
         stageLogIn.setScene(scene);
+        stageLogIn.setResizable(false);
         stageLogIn.show();
     }
 

@@ -14,6 +14,7 @@ public class Recetas {
         Scene scene = new Scene(fxmlLoader.load());
         stageRecetas.setTitle("Cake Factory");
         stageRecetas.setScene(scene);
+        stageRecetas.setResizable(false);
         stageRecetas.show();
         AppMain.ventanas.add(stageRecetas);
     }

@@ -15,6 +15,7 @@ public class EditarPedido {
         Scene scene = new Scene(fxmlLoader.load());
         stageEditarPedido.setTitle("Cake Factory");
         stageEditarPedido.setScene(scene);
+        stageEditarPedido.setResizable(false);
         stageEditarPedido.show();
         AppMain.ventanas.add(stageEditarPedido);
     }

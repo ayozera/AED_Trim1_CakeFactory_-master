@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="673.0" prefWidth="803.0" style="-fx-background-color: rgb(235, 230, 211); -fx-border-color: #ba5c12ff; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.PedidosController">
     <Pane layoutX="8.0" layoutY="7.0" prefHeight="661.0" prefWidth="787.0">
-        <TableView fx:id="tablaPedidos" layoutX="32.0" layoutY="173.0" prefHeight="377.0" prefWidth="723.0">
+        <TableView fx:id="tablaPedidos" layoutX="32.0" layoutY="190.0" prefHeight="377.0" prefWidth="723.0" style="-fx-border-color: #5bc0beff;">
             <columns>
             <TableColumn fx:id="codigo" prefWidth="75.0" text="Código" />
                 <TableColumn fx:id="nombreCliente" prefWidth="94.39998626708984" text="Cliente" />
@@ -25,12 +25,12 @@
             <TableColumn fx:id="telefono" prefWidth="106.40008544921875" text="Teléfono" />
             </columns>
         </TableView>
-        <Label layoutX="346.0" layoutY="56.0" text="Pedidos pendientes">
+        <Label layoutX="307.0" layoutY="56.0" text="Pedidos pendientes">
             <font>
                 <Font name="Calibri Bold Italic" size="36.0" />
             </font>
         </Label>
-        <Button fx:id="botonCrear" layoutX="536.0" layoutY="125.0" mnemonicParsing="false" onAction="#abrirNuevoPedido" style="-fx-background-color: #031d44ff;" text="Nuevo Pedido" textFill="WHITE" underline="true">
+        <Button fx:id="botonCrear" layoutX="470.0" layoutY="139.0" mnemonicParsing="false" onAction="#abrirNuevoPedido" style="-fx-background-color: #031d44ff;" text="Nuevo Pedido" textFill="WHITE" underline="true">
             <font>
                 <Font name="Calibri" size="18.0" />
             </font>
@@ -38,7 +38,7 @@
             <MotionBlur radius="1.11" />
          </effect>
         </Button>
-        <Button fx:id="botonEditar" layoutX="687.0" layoutY="125.0" mnemonicParsing="false" onAction="#abrirEditarPedido" style="-fx-background-color: #031d44ff;" text="Editar" textFill="WHITE" underline="true">
+        <Button fx:id="botonEditar" layoutX="632.0" layoutY="139.0" mnemonicParsing="false" onAction="#abrirEditarPedido" style="-fx-background-color: #031d44ff;" text="Editar Pedido" textFill="WHITE" underline="true">
             <font>
                 <Font name="Calibri" size="18.0" />
             </font>
@@ -49,14 +49,6 @@
         <ImageView fitHeight="125.0" fitWidth="216.0" layoutX="151.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../../../images/CakeFactoryLogo.png" />
         </ImageView>
-      <Button layoutX="627.0" layoutY="579.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="127.0" style="-fx-background-color: #031d44ff;" text="Volver atrás" textFill="WHITE" underline="true">
-         <effect>
-            <MotionBlur radius="1.11" />
-         </effect>
-         <font>
-            <Font name="Calibri" size="18.0" />
-         </font>
-      </Button>
       <Button fx:id="botonCerrarSesion" layoutX="27.0" layoutY="613.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: rgb(134, 10, 3);" text="Cerrar sesión" textFill="WHITE" underline="true">
          <cursor>
             <Cursor fx:constant="HAND" />
