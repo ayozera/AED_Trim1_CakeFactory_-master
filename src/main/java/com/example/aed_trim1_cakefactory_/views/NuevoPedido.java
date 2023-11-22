@@ -16,5 +16,10 @@ public class NuevoPedido {
         stageNuevoPedido.setTitle("Cake Factory");
         stageNuevoPedido.setScene(scene);
         stageNuevoPedido.show();
+        AppMain.ventanas.add(stageNuevoPedido);
+    }
+
+    public static Stage getStageNuevoPedido() {
+        return stageNuevoPedido;
     }
 }

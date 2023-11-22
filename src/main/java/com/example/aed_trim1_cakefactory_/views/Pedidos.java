@@ -16,7 +16,11 @@ public class Pedidos {
         stagePedidos.setTitle("Cake Factory");
         stagePedidos.setScene(scene);
         stagePedidos.show();
+        AppMain.ventanas.add(stagePedidos);
 
+    }
 
+    public static Stage getStagePedidos() {
+        return stagePedidos;
     }
 }

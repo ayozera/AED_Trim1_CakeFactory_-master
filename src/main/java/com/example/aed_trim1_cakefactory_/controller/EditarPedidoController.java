@@ -1,15 +1,19 @@
 package com.example.aed_trim1_cakefactory_.controller;
 
+import com.example.aed_trim1_cakefactory_.AppMain;
 import com.example.aed_trim1_cakefactory_.modelo.ConexionDB;
 import com.example.aed_trim1_cakefactory_.modelo.DataUp;
 import com.example.aed_trim1_cakefactory_.modelo.crud.Consulta;
 import com.example.aed_trim1_cakefactory_.modelo.crud.Delete;
 import com.example.aed_trim1_cakefactory_.modelo.crud.MapaConsultas;
 import com.example.aed_trim1_cakefactory_.views.EditarPedido;
+import com.example.aed_trim1_cakefactory_.views.LogIn;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -64,6 +68,10 @@ public class EditarPedidoController {
         }
     }
 
-    public void cerrarSesion(ActionEvent actionEvent) {
+    public void cerrarSesion(ActionEvent actionEvent) throws IOException {
+        for (Stage ventana : AppMain.ventanas) {
+            ventana.close();
+        }
+        LogIn.show();
     }
 }

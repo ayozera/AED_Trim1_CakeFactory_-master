@@ -25,7 +25,7 @@ public class NuevoPedidoController {
     public void initialize() throws SQLException {
 
         ArrayList<String> clientes = Consulta.resultSetToList(Objects.requireNonNull(Consulta.consultarNombreCliente(ConexionDB.getConector().getConexion())));
-        //choiceCliente.setItems(FXCollections.observableList(clientes));
+        choiceCliente.setItems(FXCollections.observableList(clientes));
 
         ArrayList<String> recetas = Consulta.resultSetToList(Objects.requireNonNull(Consulta.consultarNombreReceta(ConexionDB.getConector().getConexion())));
         choiceReceta.setItems(FXCollections.observableList(recetas));
