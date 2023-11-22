@@ -15,6 +15,7 @@ public class EditarReceta {
         Scene scene = new Scene(fxmlLoader.load());
         stageEditarReceta.setTitle("Cake Factory");
         stageEditarReceta.setScene(scene);
+        stageEditarReceta.setResizable(false);
         stageEditarReceta.show();
         AppMain.ventanas.add(stageEditarReceta);
     }

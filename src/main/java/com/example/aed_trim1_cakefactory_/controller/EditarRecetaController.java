@@ -1,6 +1,7 @@
 package com.example.aed_trim1_cakefactory_.controller;
 
 import com.example.aed_trim1_cakefactory_.modelo.ConexionDB;
+import com.example.aed_trim1_cakefactory_.modelo.Utiles;
 import com.example.aed_trim1_cakefactory_.modelo.crud.Consulta;
 import com.example.aed_trim1_cakefactory_.modelo.crud.Delete;
 import javafx.collections.FXCollections;
@@ -10,6 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -52,5 +54,9 @@ public class EditarRecetaController {
     }
 
     public void editarReceta(ActionEvent actionEvent) {
+    }
+
+    public void cerrarSesion(ActionEvent actionEvent) throws IOException {
+        Utiles.cerrarSesion();
     }
 }

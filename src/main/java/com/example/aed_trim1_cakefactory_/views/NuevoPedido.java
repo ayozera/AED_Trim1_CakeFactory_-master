@@ -15,6 +15,7 @@ public class NuevoPedido {
         Scene scene = new Scene(fxmlLoader.load());
         stageNuevoPedido.setTitle("Cake Factory");
         stageNuevoPedido.setScene(scene);
+        stageNuevoPedido.setResizable(false);
         stageNuevoPedido.show();
         AppMain.ventanas.add(stageNuevoPedido);
     }

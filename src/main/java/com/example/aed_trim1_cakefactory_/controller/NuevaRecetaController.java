@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -32,13 +33,19 @@ public class NuevaRecetaController {
     public Spinner spinnerCantidad;
     public ListView listViewIngredientes;
     public Button botonAgregarReceta;
+    public Tooltip toolTipCucharadas;
 
     public void initialize() throws SQLException {
 
         ArrayList<String> ingredientes = Consulta.resultSetToList(Objects.requireNonNull(Consulta.consultarNombreIngrediente(ConexionDB.getConector().getConexion())));
         comboBoxIngredientes.setItems(FXCollections.observableList(ingredientes));
 
+        spinnerCantidad.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10000));
+        spinnerCantidad.setEditable(true);
+
+        toolTipCucharadas.setShowDelay(Duration.millis(100));
     }
+
 
     public void crear(ActionEvent actionEvent) {
     }

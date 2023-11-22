@@ -16,6 +16,7 @@ public class MenuPrincipal {
         Scene scene = new Scene(fxmlLoader.load());
         stageMenuPrincipal.setTitle("Cake Factory");
         stageMenuPrincipal.setScene(scene);
+        stageMenuPrincipal.setResizable(false);
         stageMenuPrincipal.show();
         AppMain.ventanas.add(stageMenuPrincipal);
     }
