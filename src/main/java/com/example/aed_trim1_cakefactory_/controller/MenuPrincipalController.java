@@ -26,7 +26,7 @@ public class MenuPrincipalController {
         Pedidos.show();
     }
 
-    public void abrirCuenta(ActionEvent actionEvent) throws IOException {
+    public void abrirCuenta(ActionEvent actionEvent) {
     }
 
     public void cerrarSesion(ActionEvent actionEvent) {

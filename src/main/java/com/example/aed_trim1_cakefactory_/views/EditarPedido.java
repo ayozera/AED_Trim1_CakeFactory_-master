@@ -16,5 +16,10 @@ public class EditarPedido {
         stageEditarPedido.setTitle("Cake Factory");
         stageEditarPedido.setScene(scene);
         stageEditarPedido.show();
+        AppMain.ventanas.add(stageEditarPedido);
+    }
+
+    public static Stage getStageEditarPedido() {
+        return stageEditarPedido;
     }
 }

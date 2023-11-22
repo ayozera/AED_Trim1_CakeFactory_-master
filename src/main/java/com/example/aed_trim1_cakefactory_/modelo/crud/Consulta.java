@@ -94,7 +94,6 @@ public class Consulta {
 
         } catch (SQLException e) {
             System.out.println("[!] El servidor no ha admitido los parámetros de la consulta");
-            e.printStackTrace();
         }
         return null;
     }
@@ -108,7 +107,6 @@ public class Consulta {
 
         } catch (SQLException e) {
             System.out.println("[!] El servidor no ha admitido los parámetros de la consulta");
-            e.printStackTrace();
         }
         return null;
     }

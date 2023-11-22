@@ -17,5 +17,10 @@ public class MenuPrincipal {
         stageMenuPrincipal.setTitle("Cake Factory");
         stageMenuPrincipal.setScene(scene);
         stageMenuPrincipal.show();
+        AppMain.ventanas.add(stageMenuPrincipal);
+    }
+
+    public static Stage getStageMenuPrincipal() {
+        return stageMenuPrincipal;
     }
 }

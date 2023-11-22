@@ -16,5 +16,10 @@ public class NuevaReceta {
         stageNuevaReceta.setTitle("Cake Factory");
         stageNuevaReceta.setScene(scene);
         stageNuevaReceta.show();
+        AppMain.ventanas.add(stageNuevaReceta);
+    }
+
+    public static Stage getStageNuevaReceta() {
+        return stageNuevaReceta;
     }
 }

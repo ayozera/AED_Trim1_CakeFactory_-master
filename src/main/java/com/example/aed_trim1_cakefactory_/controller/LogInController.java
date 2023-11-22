@@ -37,7 +37,7 @@ public class LogInController {
             } catch (Exception e) {
             }
             MenuPrincipal.show();
-            LogIn.getStageLogIn().setOpacity(0.0);
+            LogIn.getStageLogIn().close();
 
         } catch (UsuarioNoValidoException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -16,5 +16,10 @@ public class EditarReceta {
         stageEditarReceta.setTitle("Cake Factory");
         stageEditarReceta.setScene(scene);
         stageEditarReceta.show();
+        AppMain.ventanas.add(stageEditarReceta);
+    }
+
+    public static Stage getStageEditarReceta() {
+        return stageEditarReceta;
     }
 }

@@ -8,11 +8,14 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import com.example.aed_trim1_cakefactory_.modelo.entidades.Credencial;
 import com.example.aed_trim1_cakefactory_.modelo.DataUp;
 
 public class AppMain extends Application {
+
+    public static List<Stage> ventanas = new ArrayList<>();
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -20,13 +23,15 @@ public class AppMain extends Application {
     }
 
     public static void main(String[] args) throws IOException {
+/*
         String ruta = "src/main/files/tartasCreativas.bin";
         File ficheroInicial = new File(ruta);
 
         String rutaConsultas = "src/main/files/mapaConsultas.bin";
         File ficheroInicialConsultas = new File(rutaConsultas);
+*/
 
-        if (!ficheroInicial.exists()) {
+/*        if (!ficheroInicial.exists()) {
             Credencial admin = new Credencial("admin", "admin", true);
             ArrayList<Credencial> cargaInicial = new ArrayList<>();
             cargaInicial.add(admin);
@@ -51,7 +56,8 @@ public class AppMain extends Application {
                     "group by r.id, r.nombre;");
             MapaConsultas consultas = new MapaConsultas(valores);
             DataUp.guardarMapaConsultas(consultas, rutaConsultas);
-        }
+        }*/
+
 
         launch();
     }
