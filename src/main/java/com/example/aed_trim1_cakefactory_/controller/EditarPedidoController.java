@@ -9,6 +9,8 @@ import com.example.aed_trim1_cakefactory_.modelo.crud.Delete;
 import com.example.aed_trim1_cakefactory_.modelo.crud.MapaConsultas;
 import com.example.aed_trim1_cakefactory_.views.EditarPedido;
 import com.example.aed_trim1_cakefactory_.views.LogIn;
+import com.example.aed_trim1_cakefactory_.views.NuevoPedido;
+import com.example.aed_trim1_cakefactory_.views.Pedidos;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -58,7 +60,17 @@ public class EditarPedidoController {
     public void borrarPedido(ActionEvent actionEvent) {
         try {
             System.out.println(PedidosController.id);
-            Delete.eliminarRegistros("receta",PedidosController.id);
+            Delete.eliminarRegistros("pedido",PedidosController.id);
+
+            EditarPedido.getStageEditarPedido().close();
+            Pedidos.getStagePedidos().close();
+            Pedidos.show();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Pedido borrado correctamente");
+            alert.setHeaderText("Se ha borrado el pedido indicado");
+            alert.show();
+
         } catch (Exception e) {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
