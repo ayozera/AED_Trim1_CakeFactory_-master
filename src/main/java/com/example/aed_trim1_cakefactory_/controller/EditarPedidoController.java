@@ -3,6 +3,7 @@ package com.example.aed_trim1_cakefactory_.controller;
 import com.example.aed_trim1_cakefactory_.AppMain;
 import com.example.aed_trim1_cakefactory_.modelo.ConexionDB;
 import com.example.aed_trim1_cakefactory_.modelo.DataUp;
+import com.example.aed_trim1_cakefactory_.modelo.Utiles;
 import com.example.aed_trim1_cakefactory_.modelo.crud.Consulta;
 import com.example.aed_trim1_cakefactory_.modelo.crud.Delete;
 import com.example.aed_trim1_cakefactory_.modelo.crud.MapaConsultas;
@@ -69,9 +70,6 @@ public class EditarPedidoController {
     }
 
     public void cerrarSesion(ActionEvent actionEvent) throws IOException {
-        for (Stage ventana : AppMain.ventanas) {
-            ventana.close();
-        }
-        LogIn.show();
+        Utiles.cerrarSesion();
     }
 }

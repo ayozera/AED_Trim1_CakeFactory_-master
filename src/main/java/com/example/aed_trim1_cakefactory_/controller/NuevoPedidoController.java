@@ -1,6 +1,7 @@
 package com.example.aed_trim1_cakefactory_.controller;
 
 import com.example.aed_trim1_cakefactory_.modelo.ConexionDB;
+import com.example.aed_trim1_cakefactory_.modelo.Utiles;
 import com.example.aed_trim1_cakefactory_.modelo.crud.Consulta;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -9,6 +10,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -35,6 +37,7 @@ public class NuevoPedidoController {
     public void crearPedido(ActionEvent actionEvent) {
     }
 
-    public void cerrarSesion(ActionEvent actionEvent) {
+    public void cerrarSesion(ActionEvent actionEvent) throws IOException {
+        Utiles.cerrarSesion();
     }
 }
