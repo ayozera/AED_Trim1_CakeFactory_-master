@@ -1,5 +1,6 @@
 package com.example.aed_trim1_cakefactory_.controller;
 
+import com.example.aed_trim1_cakefactory_.modelo.Utiles;
 import com.example.aed_trim1_cakefactory_.views.Pedidos;
 import com.example.aed_trim1_cakefactory_.views.Recetas;
 import javafx.event.ActionEvent;
@@ -29,7 +30,7 @@ public class MenuPrincipalController {
     public void abrirCuenta(ActionEvent actionEvent) {
     }
 
-    public void cerrarSesion(ActionEvent actionEvent) {
-
+    public void cerrarSesion(ActionEvent actionEvent) throws IOException {
+        Utiles.cerrarSesion();
     }
 }
