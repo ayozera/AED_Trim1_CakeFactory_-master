@@ -58,7 +58,7 @@ public class EditarPedidoController {
     public void borrarPedido(ActionEvent actionEvent) {
         try {
             System.out.println(PedidosController.id);
-            Delete.eliminarRegistros("pedido",PedidosController.id);
+            Delete.eliminarRegistros("receta",PedidosController.id);
         } catch (Exception e) {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
