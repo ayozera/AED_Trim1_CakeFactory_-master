@@ -6,9 +6,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
@@ -19,7 +20,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="818.0" prefWidth="764.0" style="-fx-border-color: #ba5c12ff; -fx-background-color: rgb(235, 230, 211); -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.NuevaRecetaController">
+<AnchorPane prefHeight="765.0" prefWidth="764.0" style="-fx-border-color: #ba5c12ff; -fx-background-color: rgb(235, 230, 211); -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.NuevaRecetaController">
    <Label layoutX="271.0" layoutY="606.0" prefHeight="18.0" prefWidth="24.0" text="ud." />
    <Label layoutX="383.0" layoutY="117.0" text="Procedimiento y Elaboración:">
       <font>
@@ -38,7 +39,6 @@
          <Cursor fx:constant="HAND" />
       </cursor>
    </Button>
-   <ListView fx:id="listViewIngredientes" layoutX="47.0" layoutY="217.0" prefHeight="308.0" prefWidth="253.0" style="-fx-border-color: #5bc0beff;" />
    <Label layoutX="48.0" layoutY="182.0" text="Lista de Ingredientes:">
       <font>
          <Font name="Calibri Bold Italic" size="24.0" />
@@ -93,12 +93,12 @@
       </cursor>
    </RadioButton>
    <Label layoutX="239.0" layoutY="606.0" text="ml" />
-   <Label layoutX="220.0" layoutY="24.0" prefHeight="54.0" prefWidth="371.0" text="Agregar nueva receta">
+   <Label layoutX="231.0" layoutY="24.0" prefHeight="54.0" prefWidth="371.0" text="Agregar nueva receta">
       <font>
          <Font name="System Bold Italic" size="36.0" />
       </font>
    </Label>
-   <Button fx:id="botonCerrarSesion" layoutX="30.0" layoutY="772.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: rgb(134, 10, 3);" text="Cerrar sesión" textFill="WHITE" underline="true">
+   <Button fx:id="botonCerrarSesion" layoutX="35.0" layoutY="725.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: rgb(134, 10, 3);" text="Cerrar sesión" textFill="WHITE" underline="true">
       <cursor>
          <Cursor fx:constant="HAND" />
       </cursor>
@@ -106,8 +106,8 @@
          <MotionBlur radius="1.11" />
       </effect>
    </Button>
-   <ImageView fitHeight="79.0" fitWidth="126.0" layoutX="113.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@../../../images/CakeFactoryLogo.png"/>
+   <ImageView fitHeight="79.0" fitWidth="126.0" layoutX="126.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../../images/CakeFactoryLogo.png" />
    </ImageView>
    <Label layoutX="48.0" layoutY="123.0" text="Nombre:">
       <font>
@@ -115,4 +115,15 @@
       </font>
    </Label>
    <TextField layoutX="146.0" layoutY="125.0" prefHeight="26.0" prefWidth="158.0" />
+   <Button fx:id="botonVolver" layoutX="21.0" layoutY="24.0" mnemonicParsing="false" style="-fx-background-color: #031d44ff;" text="Volver atrás" textFill="WHITE" underline="true">
+      <effect>
+         <MotionBlur radius="1.11" />
+      </effect>
+   </Button>
+   <TableView fx:id="TableViewIngredientes" layoutX="46.0" layoutY="217.0" prefHeight="316.0" prefWidth="254.0" style="-fx-border-color: #5bc0beff;">
+     <columns>
+       <TableColumn prefWidth="63.200013756752014" text="C1" />
+       <TableColumn minWidth="0.0" prefWidth="87.1999740600586" text="C2" />
+     </columns>
+   </TableView>
 </AnchorPane>

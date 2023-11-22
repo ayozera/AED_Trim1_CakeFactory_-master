@@ -7,6 +7,7 @@ import com.example.aed_trim1_cakefactory_.views.LogIn;
 import com.example.aed_trim1_cakefactory_.views.MenuPrincipal;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import java.io.IOException;
 
@@ -16,6 +17,7 @@ public class LogInController {
 
     public TextField textfieldUsuario;
     public TextField textfieldClave;
+    public Button botonSalir;
 
     public void signIn(ActionEvent actionEvent) throws IOException {
         String nombre = textfieldUsuario.getText();
@@ -53,5 +55,6 @@ public class LogInController {
     }
 
     public void exit(ActionEvent actionEvent) {
+        System.exit(0);
     }
 }

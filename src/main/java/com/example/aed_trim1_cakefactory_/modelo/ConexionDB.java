@@ -19,6 +19,7 @@ public class ConexionDB {
             System.out.println("[!] Atención. " + ex.getMessage());
             return false;
         } catch (SQLException e) {
+            e.printStackTrace();
             System.out.println("[!] Atención. Ha ocurrido un error con la base de datos. Por favor, intentelo de nuevo.");
             return false;
         } catch (ClassNotFoundException e) {

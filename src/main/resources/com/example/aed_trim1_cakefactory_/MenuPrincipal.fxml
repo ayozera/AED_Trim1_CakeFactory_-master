@@ -2,8 +2,8 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.effect.MotionBlur?>
 <?import javafx.scene.image.Image?>
@@ -14,52 +14,11 @@
 
 <AnchorPane prefHeight="453.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.MenuPrincipalController">
    
-   <Pane id="fondoPrueba" prefHeight="454.0" prefWidth="637.0" style="-fx-background-color: rgb(235, 230, 211); -fx-border-color: #ba5c12ff; -fx-border-width: 5px;" stylesheets="@../../../stylesheets/menuPrincipal.css">
-      <ImageView id="imagenMenu" fitHeight="334.0" fitWidth="355.0" layoutX="47.0" layoutY="68.0" opacity="0.86"
-                 pickOnBounds="true" preserveRatio="true">
-         <Image url="@../../../images/CakeFactoryLogo.png"/>
+   <Pane id="fondoPrueba" prefHeight="454.0" prefWidth="637.0" style="-fx-background-color: rgb(235, 230, 211); -fx-border-color: #ba5c12ff; -fx-border-width: 5px;">
+      <ImageView id="imagenMenu" fitHeight="334.0" fitWidth="355.0" layoutX="47.0" layoutY="68.0" opacity="0.86" pickOnBounds="true" preserveRatio="true">
+         <Image url="@../../../images/CakeFactoryLogo.png" />
       </ImageView>
-      <Button fx:id="botonRecetas" layoutX="437.0" layoutY="143.0" mnemonicParsing="false" onAction="#abrirRecetas" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: #031d44ff;" text="Recetas" textFill="WHITE" underline="true">
-         <font>
-            <Font name="Calibri" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <MotionBlur radius="1.11" />
-         </effect>
-         <contextMenu>
-            <ContextMenu>
-              <items>
-                <MenuItem mnemonicParsing="false" text="Agregar receta" />
-                  <MenuItem mnemonicParsing="false" text="Modificar receta" />
-                  <MenuItem mnemonicParsing="false" text="Eliminar receta" />
-              </items>
-            </ContextMenu>
-         </contextMenu>
-      </Button>
-      <Button fx:id="botonPedidos" layoutX="437.0" layoutY="278.0" mnemonicParsing="false" onAction="#abrirPedidos" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: #031d44ff;" text="Pedidos" textFill="WHITE" underline="true">
-         <font>
-            <Font size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <MotionBlur radius="1.11" />
-         </effect>
-         <contextMenu>
-            <ContextMenu>
-              <items>
-                <MenuItem mnemonicParsing="false" text="Agregar pedido" />
-                  <MenuItem mnemonicParsing="false" text="Modificar pedido" />
-                  <MenuItem mnemonicParsing="false" text="Eliminar pedido" />
-              </items>
-            </ContextMenu>
-         </contextMenu>
-      </Button>
-      <Button fx:id="botonCuenta" layoutX="56.0" layoutY="400.0" mnemonicParsing="false" onAction="#abrirCuenta" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: rgb(134, 10, 3);" text="Cerrar sesión" textFill="WHITE" underline="true">
+      <Button fx:id="botonCerrarSesion" layoutX="56.0" layoutY="400.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: rgb(134, 10, 3);" text="Cerrar sesión" textFill="WHITE" underline="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -72,5 +31,33 @@
             <Font name="System Bold Italic" size="36.0" />
          </font>
       </Label>
+      <MenuButton alignment="CENTER" contentDisplay="RIGHT" layoutX="437.0" layoutY="152.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="124.0" style="-fx-background-color: #031d44ff #031d44ff;" text="Recetas" textFill="WHITE" underline="true">
+        <items>
+          <MenuItem fx:id="itemMostrarReceta" mnemonicParsing="false" onAction="#abrirRecetas" text="Mostrar" />
+          <MenuItem mnemonicParsing="false" text="Modificar" />
+            <MenuItem mnemonicParsing="false" text="Agregar" />
+            <MenuItem mnemonicParsing="false" text="Eliminar" />
+        </items>
+         <effect>
+            <MotionBlur radius="1.11" />
+         </effect>
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </MenuButton>
+      <MenuButton alignment="CENTER" contentDisplay="RIGHT" layoutX="437.0" layoutY="292.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="124.0" style="-fx-background-color: #031d44ff #031d44ff;" text="Pedidos" textFill="WHITE" underline="true">
+         <items>
+            <MenuItem fx:id="itemMostrarPedido" mnemonicParsing="false" onAction="#abrirPedidos" text="Mostrar" />
+            <MenuItem mnemonicParsing="false" text="Modificar" />
+            <MenuItem mnemonicParsing="false" text="Agregar" />
+            <MenuItem mnemonicParsing="false" text="Eliminar" />
+         </items>
+         <effect>
+            <MotionBlur radius="1.11" />
+         </effect>
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </MenuButton>
    </Pane>
 </AnchorPane>

@@ -12,7 +12,8 @@ public class Conector {
     private Connection conexion;
 
     public Conector() throws SQLException {
-        conexion = DriverManager.getConnection(urlDriver, usuario, password);
+
+       conexion = DriverManager.getConnection(urlDriver, usuario, password);
     }
 
     public Conector(String usuario, String password) throws SQLException {

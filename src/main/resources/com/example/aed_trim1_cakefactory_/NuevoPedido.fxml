@@ -12,8 +12,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <AnchorPane prefHeight="411.0" prefWidth="451.0" style="-fx-background-color: rgb(235, 230, 211); -fx-border-color: #ba5c12ff; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aed_trim1_cakefactory_.controller.NuevoPedidoController">
-   <Pane layoutX="6.0" layoutY="7.0" prefHeight="394.0" prefWidth="442.0">
+   <Pane layoutX="6.0" layoutY="7.0" prefHeight="394.0" prefWidth="494.0">
       <Button fx:id="botonCrear" layoutX="307.0" layoutY="289.0" mnemonicParsing="false" onAction="#crearPedido" prefHeight="35.0" prefWidth="74.0" style="-fx-background-color: #031d44ff;" text="Crear" textFill="#fffbfb" underline="true">
          <font>
             <Font name="Calibri" size="18.0" />
@@ -22,7 +24,7 @@
             <MotionBlur radius="1.11" />
          </effect>
       </Button>
-      <Label layoutX="133.0" layoutY="22.0" text="Registrar Pedido">
+      <Label layoutX="169.0" layoutY="49.0" text="Registrar Pedido">
          <font>
             <Font name="Calibri Bold Italic" size="36.0" />
          </font>
@@ -43,15 +45,34 @@
          </font>
       </Label>
       <DatePicker fx:id="dateFecha" layoutX="199.0" layoutY="233.0" prefHeight="25.0" prefWidth="175.0" />
-      <ImageView fitHeight="74.0" fitWidth="98.0" layoutX="34.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-         <Image url="@../../../images/CakeFactoryLogo.png"/>
+      <ImageView fitHeight="74.0" fitWidth="98.0" layoutX="72.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@../../../images/CakeFactoryLogo.png" />
       </ImageView>
-      <ComboBox layoutX="198.0" layoutY="122.0" prefHeight="25.0" prefWidth="175.0" promptText="Selecciona el cliente" />
-      <ComboBox layoutX="198.0" layoutY="175.0" prefHeight="25.0" prefWidth="175.0" promptText="¿Qué receta quiere?" />
+      <ComboBox layoutX="198.0" layoutY="122.0" prefHeight="25.0" prefWidth="175.0" promptText="Selecciona el cliente" >
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Harina" />
+               <String fx:value="Azúcar" />
+            </FXCollections>
+         </items>
+      </ComboBox>
+      <ComboBox layoutX="198.0" layoutY="175.0" prefHeight="25.0" prefWidth="175.0" promptText="¿Qué receta quiere?" >
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Harina" />
+               <String fx:value="Azúcar" />
+            </FXCollections>
+         </items>
+      </ComboBox>
       <Button fx:id="botonCerrarSesion" layoutX="44.0" layoutY="337.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: rgb(134, 10, 3);" text="Cerrar sesión" textFill="WHITE" underline="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <effect>
+            <MotionBlur radius="1.11" />
+         </effect>
+      </Button>
+      <Button fx:id="botonVolver" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #031d44ff;" text="Volver atrás" textFill="WHITE" underline="true">
          <effect>
             <MotionBlur radius="1.11" />
          </effect>

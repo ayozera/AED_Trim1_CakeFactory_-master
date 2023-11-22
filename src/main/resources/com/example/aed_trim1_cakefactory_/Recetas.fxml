@@ -21,7 +21,7 @@
             <TableColumn fx:id="precio" prefWidth="77.59991455078125" text="Precio" />
             </columns>
         </TableView>
-        <Label layoutX="251.0" layoutY="31.0" text="Recetas">
+        <Label layoutX="287.0" layoutY="23.0" text="Recetas">
             <font>
                 <Font name="System Bold Italic" size="36.0" />
             </font>
@@ -42,15 +42,19 @@
             <MotionBlur radius="1.11" />
          </effect>
         </Button>
-        <ImageView fitHeight="86.0" fitWidth="118.0" layoutX="132.0" layoutY="15.0" pickOnBounds="true"
-                   preserveRatio="true">
-            <Image url="@../../../images/CakeFactoryLogo.png"/>
+        <ImageView fitHeight="86.0" fitWidth="118.0" layoutX="168.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../../images/CakeFactoryLogo.png" />
         </ImageView>
     </Pane>
    <Button fx:id="botonCerrarSesion" layoutX="42.0" layoutY="513.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: rgb(134, 10, 3);" text="Cerrar sesión" textFill="WHITE" underline="true">
       <cursor>
          <Cursor fx:constant="HAND" />
       </cursor>
+      <effect>
+         <MotionBlur radius="1.11" />
+      </effect>
+   </Button>
+   <Button fx:id="botonVolver" layoutX="31.0" layoutY="34.0" mnemonicParsing="false" style="-fx-background-color: #031d44ff;" text="Volver atrás" textFill="WHITE" underline="true">
       <effect>
          <MotionBlur radius="1.11" />
       </effect>

@@ -21,6 +21,7 @@ public class NuevoPedidoController {
     public DatePicker dateFecha;
     public TextField textfieldComensales;
     public Button botonCerrarSesion;
+    public Button botonVolver;
 
     public void initialize() throws SQLException {
 

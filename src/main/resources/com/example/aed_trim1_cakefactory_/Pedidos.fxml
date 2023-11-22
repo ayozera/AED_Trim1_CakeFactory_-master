@@ -25,7 +25,7 @@
             <TableColumn fx:id="telefono" prefWidth="106.40008544921875" text="Teléfono" />
             </columns>
         </TableView>
-        <Label layoutX="256.0" layoutY="44.0" text="Pedidos pendientes">
+        <Label layoutX="346.0" layoutY="56.0" text="Pedidos pendientes">
             <font>
                 <Font name="Calibri Bold Italic" size="36.0" />
             </font>
@@ -46,9 +46,8 @@
             <MotionBlur radius="1.11" />
          </effect>
         </Button>
-        <ImageView fitHeight="125.0" fitWidth="216.0" layoutX="61.0" layoutY="2.0" pickOnBounds="true"
-                   preserveRatio="true">
-            <Image url="@../../../images/CakeFactoryLogo.png"/>
+        <ImageView fitHeight="125.0" fitWidth="216.0" layoutX="151.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../../images/CakeFactoryLogo.png" />
         </ImageView>
       <Button layoutX="627.0" layoutY="579.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="127.0" style="-fx-background-color: #031d44ff;" text="Volver atrás" textFill="WHITE" underline="true">
          <effect>
@@ -67,4 +66,9 @@
          </effect>
       </Button>
     </Pane>
+   <Button fx:id="botonVolver" layoutX="31.0" layoutY="34.0" mnemonicParsing="false" style="-fx-background-color: #031d44ff;" text="Volver atrás" textFill="WHITE" underline="true">
+      <effect>
+         <MotionBlur radius="1.11" />
+      </effect>
+   </Button>
 </AnchorPane>
