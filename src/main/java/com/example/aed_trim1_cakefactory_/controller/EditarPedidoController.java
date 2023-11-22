@@ -4,6 +4,7 @@ import com.example.aed_trim1_cakefactory_.AppMain;
 import com.example.aed_trim1_cakefactory_.modelo.ConexionDB;
 import com.example.aed_trim1_cakefactory_.modelo.DataUp;
 import com.example.aed_trim1_cakefactory_.modelo.Utiles;
+import com.example.aed_trim1_cakefactory_.modelo.crud.Actualizar;
 import com.example.aed_trim1_cakefactory_.modelo.crud.Consulta;
 import com.example.aed_trim1_cakefactory_.modelo.crud.Delete;
 import com.example.aed_trim1_cakefactory_.modelo.crud.MapaConsultas;
@@ -53,7 +54,21 @@ public class EditarPedidoController {
         textfieldEmail.setText(PedidosController.emailText);
         textfieldTelefono.setText(PedidosController.telefonoText);
     }
-    public void editarPedido(ActionEvent actionEvent) {
+    public void editarPedido(ActionEvent actionEvent) throws SQLException, IOException {
+        String nombreCliente = choiceCliente.getSelectionModel().getSelectedItem().toString();
+        String nombreReceta = choiceReceta.getSelectionModel().getSelectedItem().toString();
+        LocalDate fecha = dateFecha.getValue();
+        Actualizar.pedido(nombreCliente, nombreReceta, fecha, PedidosController.id);
+
+        EditarPedido.getStageEditarPedido().close();
+        Pedidos.getStagePedidos().close();
+        Pedidos.show();
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Pedido actualizado");
+        alert.setHeaderText("Se ha actualizado el pedido con los siguientes datos:");
+        alert.setContentText("Cliente: " + nombreCliente + " Receta: " + nombreReceta + " Fecha: " + fecha);
+        alert.show();
 
     }
 

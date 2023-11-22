@@ -40,7 +40,7 @@ public class EditarRecetaController {
     public void borrarReceta(ActionEvent actionEvent) {
         try {
             System.out.println(RecetasController.id);
-            Delete.eliminarRegistros("pedido",PedidosController.id);
+            Delete.eliminarRegistros("receta",RecetasController.id);
         } catch (Exception e) {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
