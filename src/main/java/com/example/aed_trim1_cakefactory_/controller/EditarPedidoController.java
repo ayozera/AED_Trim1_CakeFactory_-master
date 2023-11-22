@@ -31,9 +31,6 @@ public class EditarPedidoController {
     public ChoiceBox choiceReceta;
     public DatePicker dateFecha;
     public Button botonBorrar;
-    public TextField textfieldDireccion;
-    public TextField textfieldEmail;
-    public TextField textfieldTelefono;
     public Button botonCerrarSesion;
 
     public void initialize() throws SQLException, IOException, ClassNotFoundException {
@@ -50,9 +47,6 @@ public class EditarPedidoController {
         int mes = Integer.parseInt(PedidosController.fechaText.substring(5,7));
         int dia = Integer.parseInt(PedidosController.fechaText.substring(8,10));
         dateFecha.setValue(LocalDate.of(year, mes, dia));
-        textfieldDireccion.setText(PedidosController.direccionText);
-        textfieldEmail.setText(PedidosController.emailText);
-        textfieldTelefono.setText(PedidosController.telefonoText);
     }
     public void editarPedido(ActionEvent actionEvent) throws SQLException, IOException {
         String nombreCliente = choiceCliente.getSelectionModel().getSelectedItem().toString();

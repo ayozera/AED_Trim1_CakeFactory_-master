@@ -99,6 +99,7 @@ public class PedidosController {
 
             EditarPedido.show();
         } catch (Exception e) {
+            e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Selección nula");
             alert.setHeaderText("Debe seleccionarse primero una fila");
